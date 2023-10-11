@@ -6,7 +6,7 @@ using namespace std;
 //My Node Structure is here.
 struct node{
     node* previousNode;
-    int item;
+    int data;
     node* nextNode;
 };
 
@@ -26,7 +26,7 @@ class DoublyLinkedList{
     void deleteAtLast(); //This function is used to delete element from last of the Doubly linked list.
     void deleteSpecifiedNode(int); //This function is used to delete specified node form the Doubly linked list.
     void reverse(); //This funciton is used to reverse element of Doubly Linked list.
-    int countNode();
+    int length(); //This function is used to get the length of the Doubly Linked list.
     void display(); //This function is used to display the whole data of the Doubly linked list.
     ~DoublyLinkedList(); //This is the destructor of this class.
 };
@@ -39,53 +39,166 @@ DoublyLinkedList::DoublyLinkedList(){
 }
 
 //Definition of insertAtStart function of class DoublyLinkedList.
-void DoublyLinkedList::insertAtStart(int data){
-
+void DoublyLinkedList::insertAtStart(int value){
+    node *n;
+    n= new node;
+    n->previousNode= NULL;
+    n->data= value;
+    n->nextNode= start;
+    if(start){
+        start->previousNode= n;
+    }
+    start= n;
 }
 
 //Definition of insertAtLast function of class DoublyLinkedList.
-void DoublyLinkedList::insertAtLast(int data){
+void DoublyLinkedList::insertAtLast(int value){
+    if(start == NULL){
+       insertAtStart(value);
+       return;
+    }else{
+        node *n= new node;
+        n->previousNode= start;
+        n->data= value;
+        n->nextNode= NULL;
 
+        node *temp= start;
+        while(temp->nextNode != NULL){
+            temp= temp->nextNode;
+        }
+        temp->nextNode= n;
+    }
 }
 
 //Definition of insertAtAfter function of class DoublyLinkedList.
-void DoublyLinkedList::insertAtAfter(node* temp, int data){
+void DoublyLinkedList::insertAtAfter(node* temp, int value){
+    node *n;
+    if(temp){
+        n= new node;
+        n->data= value;
+        n->nextNode= temp->nextNode;
+        n->previousNode= temp->previousNode;
+        temp->nextNode= n;
+    }else{
+        cout<<endl<<"Doubly Linked list is Empty."<<endl;
+    }
 
 }
 
 //Definition of search function of class DoublyLinkedList.
-node* DoublyLinkedList::search(int data){
-
+node* DoublyLinkedList::search(int value){
+    node *temp= start;
+    while(temp != NULL){
+        if(temp->data == value){
+            return temp;
+            break;
+        }
+        temp= temp->nextNode;
+    }
+    return NULL;
 }
 
 //Definition of deleteAtStart function of class DoublyLinkedList.
 void DoublyLinkedList::deleteAtStart(){
-
+    node *tempToDelete;
+    if(start){
+        if(start->nextNode == NULL){
+            delete start;
+            start= NULL;
+        }else{
+            tempToDelete= start;
+            start= start->nextNode;
+            start->previousNode= NULL;
+            delete tempToDelete;
+        }
+    }
 }
 
 //Definition of deleteAtLast function of class DoublyLinkedList.
 void DoublyLinkedList::deleteAtLast(){
-
+    node *tempToDelete;
+    if(start){
+        tempToDelete= start;
+        if(tempToDelete->nextNode == NULL){
+            delete tempToDelete;
+            start= NULL;
+        }else{
+            while(tempToDelete->nextNode->nextNode != NULL){
+                tempToDelete= tempToDelete->nextNode;
+            }
+            delete tempToDelete->nextNode;
+            tempToDelete->nextNode= NULL;
+        }
+    }
 }
 
 //Definition of deleteSpecifiedNode function of class DoublyLinkedList.
-void DoublyLinkedList::deleteSpecifiedNode(int data){
-
+void DoublyLinkedList::deleteSpecifiedNode(int value){
+    node *tempToDelete;
+    tempToDelete= start;
+    while(tempToDelete){
+        if(tempToDelete->data == value){
+            if(tempToDelete->previousNode == NULL && tempToDelete->nextNode == NULL){
+                start= NULL;
+            }
+            else if(tempToDelete->previousNode == NULL){
+                start= tempToDelete->nextNode;
+                start->previousNode= NULL;
+            }
+           delete tempToDelete;
+           break;      
+        }
+        tempToDelete= tempToDelete->nextNode;
+    }
 }
 
 //Definition of reverse function of class DoublyLinkedList.
 void DoublyLinkedList::reverse(){
+    node *tempNode;
+    tempNode= start;
+    node *previousPtr= NULL;
+    node *currentPtr= tempNode;
+    node *nextPtr;
+
+    while(currentPtr != NULL){
+        nextPtr= currentPtr->nextNode;
+        currentPtr->nextNode = previousPtr;
+        
+        previousPtr= currentPtr;
+        currentPtr= nextPtr;
+    }
+    start= previousPtr;
 
 }
 
 //Definition of countNode function of class DoublyLinkedList.
-int DoublyLinkedList::countNode(){
-
+int DoublyLinkedList::length(){
+    int count= 0;
+    node *temp= start;
+    while(temp){
+        temp= temp->nextNode;
+        count++;
+    }
+    return count;
 }
 
 //Definition of display function of class DoublyLinkedList.
 void DoublyLinkedList::display(){
-    
+    node *temp= new node;
+    temp= start;
+    if(temp == NULL){
+        cout<<endl<<"There is no node in the Doubly Linked list now."<<endl;
+    }else{
+        cout<<endl<<"NULL<-";
+        while(temp != NULL){
+            cout<<"P["<<temp->data<<"]N";
+            if(temp->nextNode != NULL){
+                cout<<"<=>";
+            }
+            temp= temp->nextNode;
+        }
+        cout<<"->NULL"<<endl;
+    }
 }
 
 //Definiton of Distructor of class DoublyLinkedList.
@@ -97,7 +210,143 @@ DoublyLinkedList::~DoublyLinkedList(){
 
 int main(){
     cout<<"Doubly Linked list Data Structure in C++ programming\n"<<endl;
-    
+
+    int choice= 0, element;
+    DoublyLinkedList dLL;
+    node *t= NULL;
+
+    while(1){
+        
+        cout<<"_______________________________________________________________"<<endl;
+        cout<<"|\t                                                      |"<<endl;
+        cout<<"|\t     **** Please Select Your Operation. ****          |"<<endl;
+        cout<<"|-------------------------------------------------------------|"<<endl;
+        cout<<"|\t                                                      |"<<endl;
+        cout<<"|\t1-> Insert elements at the Start.                     |"<<endl;
+        cout<<"|\t2-> Insert elements at the Last.                      |"<<endl;
+        cout<<"|\t3-> Insert elements at the Specified Position.        |"<<endl;
+        cout<<"|\t4-> Searching elements.                               |"<<endl;
+        cout<<"|\t5-> Delete element at the start.                      |"<<endl;
+        cout<<"|\t6-> Delete element at the last.                       |"<<endl;
+        cout<<"|\t7-> Delete element at the specified position.         |"<<endl;
+        cout<<"|\t8-> Reversing the List elements.                      |"<<endl;
+        cout<<"|\t9-> Total count of nodes in the Doubly linked list.   |"<<endl;
+        cout<<"|\t10-> Display List elements.                           |"<<endl;
+        cout<<"|\t11-> Exit.                                            |"<<endl;
+        cout<<"|\t                                                      |"<<endl;
+        cout<<"***************************************************************"<<endl<<endl;
+        cout<<"Enter your choice here : ";
+        cin>>choice;
+
+        //Switch case code is here.
+        switch(choice){
+            case 1: {
+                cout<<"Enter element here : ";
+                cin>>element;
+                dLL.insertAtStart(element);
+                system("cls");
+                cout<<endl<<element<<" : is inserted successfully at the start of Doubly linked list."<<endl;
+                cout<<endl;
+                break;
+            }
+            case 2: {
+                cout<<"Enter element here : ";
+                cin>>element;
+                dLL.insertAtLast(element);
+                system("cls");
+                cout<<endl<<element<<" : is inserted successfully at the Last of Doubly linked list."<<endl;
+                cout<<endl;
+                break;
+            }
+            case 3: {
+                if(t == NULL){
+                    system("cls");
+                    cout<<endl<<"Firstly you will have to Run search function."<<endl<<endl;
+                    break;
+                }
+                cout<<"Enter element here : ";
+                cin>>element;
+                dLL.insertAtAfter(t, element);
+                system("cls");
+                cout<<endl<<element<<" : is inserted successfully at after : "<<t->data<<endl;
+                cout<<endl;
+                break;
+            }
+            case 4: {
+                cout<<"Enter element here : ";
+                cin>>element;
+                system("cls");
+                if(t= dLL.search(element)){
+                    cout<<endl<<element<<" : is present in the Doubly linked list."<<endl;
+                }else{
+                    cout<<endl<<element<<" : is not present in the Doubly linked list."<<endl;
+                }
+                cout<<endl;
+                break;
+            }
+            case 5: {
+                dLL.deleteAtStart();
+                system("cls");
+                cout<<endl<<"Element is deleted at the start of this Doubly Linked list."<<endl;
+                cout<<endl;
+                break;
+            }
+            case 6: {
+                dLL.deleteAtLast();
+                system("cls");
+                cout<<endl<<"Element is deleted at the Last of this Doubly Linked list."<<endl;
+                cout<<endl;
+                break;
+            }
+            case 7: {
+                cout<<"Enter element here : ";
+                cin>>element;
+                system("cls");
+                dLL.deleteSpecifiedNode(element);
+                cout<<endl<<element<<" : is deleted at spcified position of this Doubly Linked list."<<endl;
+                cout<<endl;
+                break;
+            }
+            case 8: {
+                dLL.reverse();
+                system("cls");
+                cout<<"Linked list has been reversed successfully."<<endl;
+                dLL.display();
+                cout<<endl;
+                break;
+            }
+            case 9: {
+                int totalNode= 0;
+                totalNode= dLL.length();
+                system("cls");
+                cout<<endl<<"The total node is : "<<totalNode<<endl<<endl;
+                break;
+            }
+            case 10: {
+                system("cls");
+                dLL.display();
+                cout<<endl;
+                break;
+            }
+            case 11: {
+                exit(1);
+                break;
+            }
+            default :{
+                system("cls");
+                cout<<"Invalid choice! Please choice a valid option."<<endl;
+                break;
+            }
+        }
+
+        //This condition is used to Clear screen at the specific conditions.
+        if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
+            //Do nothing.
+        }else{
+            system("cls");
+        }
+
+    }    
     
     //getch();
     return(0);
