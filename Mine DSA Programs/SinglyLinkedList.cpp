@@ -69,9 +69,9 @@ void SLL::insertAtAfter(node *temp, int data){
         n->item= data;
         n->next= temp->next;
         temp->next= n;
-    }else{
+    }/*else{
         cout<<"Your node is empty."<<endl;
-    }
+    }*/
 }
 
 //Definition of search function of linked list.
@@ -213,20 +213,25 @@ int main(){
     t= NULL;
 
     while(1){
-        
-        cout<<"----------------------------------------------------------"<<endl<<endl;
-        cout<<"**** Please Select Your Operation. ****"<<endl<<endl;
-        cout<<"1-> Insert elements at the Start."<<endl;
-        cout<<"2-> Insert elements at the Last."<<endl;
-        cout<<"3-> Insert elements at the Specified Position."<<endl;
-        cout<<"4-> Searching elements."<<endl;
-        cout<<"5-> Delete element at the start."<<endl;
-        cout<<"6-> Delete element at the last."<<endl;
-        cout<<"7-> Delete element at the specified position."<<endl;
-        cout<<"8-> Reversing the List elements."<<endl;
-        cout<<"9-> Total count of node in the linked list."<<endl;
-        cout<<"10-> Display List elements."<<endl;
-        cout<<"11-> Exit."<<endl<<endl;
+
+        cout<<"_________________________________________________________________________________"<<endl;
+        cout<<"|\t                                                                        |"<<endl;
+        cout<<"|\t            **** Please Select Your Operation. ****                     |"<<endl;
+        cout<<"|-------------------------------------------------------------------------------|"<<endl;
+        cout<<"|\t                                                                        |"<<endl;
+        cout<<"|\t1-> Insert elements at the Start Singly Linked List.                    |"<<endl;
+        cout<<"|\t2-> Insert elements at the Last Singly Linked List.                     |"<<endl;
+        cout<<"|\t3-> Insert elements at the Specified Position of the Linked List.       |"<<endl;
+        cout<<"|\t4-> Searching elements in the Singly Linked List.                       |"<<endl;
+        cout<<"|\t5-> Delete element at the start of the Singly Linked List.              |"<<endl;
+        cout<<"|\t6-> Delete element at the last of the Singly Linked List.               |"<<endl;
+        cout<<"|\t7-> Delete element at the specified position of the Singly Linked List. |"<<endl;
+        cout<<"|\t8-> Reversing the List elements of the Singly Linked list.              |"<<endl;
+        cout<<"|\t9-> Total count of nodes in the Singly linked list.                     |"<<endl;
+        cout<<"|\t10-> Display Singly Linked List elements.                               |"<<endl;
+        cout<<"|\t11-> Exit.                                                              |"<<endl;
+        cout<<"|\t                                                                        |"<<endl;
+        cout<<"*********************************************************************************"<<endl<<endl;
         cout<<"Enter your choice here : ";
         cin>>choice;
 
@@ -251,11 +256,16 @@ int main(){
                 break;
             }
             case 3: {
-                cout<<"Enter element here : ";
-                cin>>element;
-                sll.insertAtAfter(t, element);
-                system("cls");
-                cout<<element<<" : is inserted successfully at after : "<<t->item<<endl;
+                if(t == NULL){
+                    system("cls");
+                    cout<<"Unable to insert data at specified position! Use search at least once before Run this Utility."<<endl;
+                }else{
+                    cout<<"Enter element here : ";
+                    cin>>element;
+                    sll.insertAtAfter(t, element);
+                    system("cls");
+                    cout<<element<<" : is inserted successfully at after : "<<t->item<<endl;
+                }
                 cout<<endl;
                 break;
             }
