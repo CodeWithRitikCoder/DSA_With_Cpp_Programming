@@ -347,17 +347,18 @@ int main(){
                 break;
             }
             default :{
-                cout<<"Invalid choice! Please choice a valid option."<<endl;
+                system("cls");
+                cout<<endl<<"Invalid choice! Please choice a valid option."<<endl;
                 break;
             }
         }
 
         //This condition is used to Clear screen at the specific conditions.
-        if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
-            //Do nothing.
-        }else{
-            system("cls");
-        }
+        // if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
+        //     //Do nothing.
+        // }else{
+        //     system("cls");
+        // }
 
     }
     
