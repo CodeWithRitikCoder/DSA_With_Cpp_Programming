@@ -217,24 +217,24 @@ int main(){
 
     while(1){
         
-        cout<<"_______________________________________________________________"<<endl;
-        cout<<"|\t                                                      |"<<endl;
-        cout<<"|\t     **** Please Select Your Operation. ****          |"<<endl;
-        cout<<"|-------------------------------------------------------------|"<<endl;
-        cout<<"|\t                                                      |"<<endl;
-        cout<<"|\t1-> Insert elements at the Start.                     |"<<endl;
-        cout<<"|\t2-> Insert elements at the Last.                      |"<<endl;
-        cout<<"|\t3-> Insert elements at the Specified Position.        |"<<endl;
-        cout<<"|\t4-> Searching elements.                               |"<<endl;
-        cout<<"|\t5-> Delete element at the start.                      |"<<endl;
-        cout<<"|\t6-> Delete element at the last.                       |"<<endl;
-        cout<<"|\t7-> Delete element at the specified position.         |"<<endl;
-        cout<<"|\t8-> Reversing the List elements.                      |"<<endl;
-        cout<<"|\t9-> Total count of nodes in the Doubly linked list.   |"<<endl;
-        cout<<"|\t10-> Display List elements.                           |"<<endl;
-        cout<<"|\t11-> Exit.                                            |"<<endl;
-        cout<<"|\t                                                      |"<<endl;
-        cout<<"***************************************************************"<<endl<<endl;
+        cout<<"________________________________________________________________________________________"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"|\t                 **** Please Select Your Operation. ****                       |"<<endl;
+        cout<<"|--------------------------------------------------------------------------------------|"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"|\t1-> Insert elements at the Start Doubly Linked List.                           |"<<endl;
+        cout<<"|\t2-> Insert elements at the Last Doubly Linked List.                            |"<<endl;
+        cout<<"|\t3-> Insert elements at the Specified Position of the Doubly Linked List.       |"<<endl;
+        cout<<"|\t4-> Searching elements in the Doubly Linked List.                              |"<<endl;
+        cout<<"|\t5-> Delete element at the start of the Doubly Linked List.                     |"<<endl;
+        cout<<"|\t6-> Delete element at the last of the Doubly Linked List.                      |"<<endl;
+        cout<<"|\t7-> Delete element at the specified position of the Doubly Linked List.        |"<<endl;
+        cout<<"|\t8-> Reversing the List elements of the Doubly Linked list.                     |"<<endl;
+        cout<<"|\t9-> Total count of nodes in the Doubly linked list.                            |"<<endl;
+        cout<<"|\t10-> Display Doubly Linked List elements.                                      |"<<endl;
+        cout<<"|\t11-> Exit.                                                                     |"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"****************************************************************************************"<<endl<<endl;
         cout<<"Enter your choice here : ";
         cin>>choice;
 

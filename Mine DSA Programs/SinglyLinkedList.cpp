@@ -214,24 +214,24 @@ int main(){
 
     while(1){
 
-        cout<<"_________________________________________________________________________________"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"|\t            **** Please Select Your Operation. ****                     |"<<endl;
-        cout<<"|-------------------------------------------------------------------------------|"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"|\t1-> Insert elements at the Start Singly Linked List.                    |"<<endl;
-        cout<<"|\t2-> Insert elements at the Last Singly Linked List.                     |"<<endl;
-        cout<<"|\t3-> Insert elements at the Specified Position of the Linked List.       |"<<endl;
-        cout<<"|\t4-> Searching elements in the Singly Linked List.                       |"<<endl;
-        cout<<"|\t5-> Delete element at the start of the Singly Linked List.              |"<<endl;
-        cout<<"|\t6-> Delete element at the last of the Singly Linked List.               |"<<endl;
-        cout<<"|\t7-> Delete element at the specified position of the Singly Linked List. |"<<endl;
-        cout<<"|\t8-> Reversing the List elements of the Singly Linked list.              |"<<endl;
-        cout<<"|\t9-> Total count of nodes in the Singly linked list.                     |"<<endl;
-        cout<<"|\t10-> Display Singly Linked List elements.                               |"<<endl;
-        cout<<"|\t11-> Exit.                                                              |"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"*********************************************************************************"<<endl<<endl;
+        cout<<"________________________________________________________________________________________"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"|\t                 **** Please Select Your Operation. ****                       |"<<endl;
+        cout<<"|--------------------------------------------------------------------------------------|"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"|\t1-> Insert elements at the Start Singly Linked List.                           |"<<endl;
+        cout<<"|\t2-> Insert elements at the Last Singly Linked List.                            |"<<endl;
+        cout<<"|\t3-> Insert elements at the Specified Position of the Singly Linked List.       |"<<endl;
+        cout<<"|\t4-> Searching elements in the Singly Linked List.                              |"<<endl;
+        cout<<"|\t5-> Delete element at the start of the Singly Linked List.                     |"<<endl;
+        cout<<"|\t6-> Delete element at the last of the Singly Linked List.                      |"<<endl;
+        cout<<"|\t7-> Delete element at the specified position of the Singly Linked List.        |"<<endl;
+        cout<<"|\t8-> Reversing the List elements of the Singly Linked list.                     |"<<endl;
+        cout<<"|\t9-> Total count of nodes in the Singly linked list.                            |"<<endl;
+        cout<<"|\t10-> Display Singly Linked List elements.                                      |"<<endl;
+        cout<<"|\t11-> Exit.                                                                     |"<<endl;
+        cout<<"|\t                                                                               |"<<endl;
+        cout<<"****************************************************************************************"<<endl<<endl;
         cout<<"Enter your choice here : ";
         cin>>choice;
 
