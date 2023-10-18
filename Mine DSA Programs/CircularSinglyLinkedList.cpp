@@ -1,4 +1,4 @@
-//Write a program to implement Linked List Data Structure in C++ programming with Ritik.
+//Write a program to implement Circular Linked List Data Structure in C++ programming with Ritik.
 #include"iostream"
 #include"conio.h"
 using namespace std;
@@ -10,11 +10,11 @@ struct node{
 };
 
 // It's my Singly Linked List Class.
-class SLL{
+class CircularSinglyLinkedList{
     node *start;
 
     public:
-    SLL(); //This is the default constructor of this class.
+    CircularSinglyLinkedList(); //This is the default constructor of this class.
     void insertAtStart(int); //This function is used to insert element at the start of the linked list.
     void insertAtLast(int); //This function is used to insert element at the last of the linked list.
     void insertAtAfter(node *, int); //This function is used to insert elemtn at the specified path into the linked list.
@@ -23,110 +23,127 @@ class SLL{
     void deleteAtLast(); //This function is used to delete element from last of the linked list.
     void deleteSpecifiedNode(int); //This function is used to delete specified node form the linked list.
     void reverse(); //This funciton is used to reverse element of Linked list.
-    int countNode();
+    int length();
     void display(); //This function is used to display the whole data of the linked list.
-    ~SLL(); //This is the destructor of this class.
+    ~CircularSinglyLinkedList(); //This is the destructor of this class.
 };
 
 //Definition of all the function is here.
 
 //Definiton of default constructor of class SLL.
-SLL::SLL(){
+CircularSinglyLinkedList::CircularSinglyLinkedList(){
     start= NULL;
 }
 
 //Definition of insertAtStart function of lisked list.
-void SLL::insertAtStart(int data){
+void CircularSinglyLinkedList::insertAtStart(int data){
     node *n= new node;
     n->item= data;
     n->next= start;
+    if(start == NULL){
+        n->next= n;
+        start= n;
+        return;
+    }
+
+    node *temp= start;
+    while(temp->next != start){
+        temp= temp->next;
+    }
+    temp->next= n;
     start= n;
 }
 
 //Definition of insertAtLast function of Linked list.
-void SLL::insertAtLast(int data){
+void CircularSinglyLinkedList::insertAtLast(int data){
+    if(start == NULL){
+        insertAtStart(data);
+        return;
+    }
     node *n= new node;
     n->item= data;
-    n->next= NULL;
+    n->next= start;
 
-    if(start == NULL){
-        start= n;
-    }else{
-        node *temp;
-        temp= start;
-        while(temp->next != NULL){
-            temp= temp->next;
-        }
-        temp->next= n;
+    node *temp= start;
+    while(temp->next != start){
+        temp= temp->next;
     }
+    temp->next= n;
 }
 
 //Definition of insertAtAfter function of linked list.
-void SLL::insertAtAfter(node *temp, int data){
+void CircularSinglyLinkedList::insertAtAfter(node *temp, int data){
     node *n;
     if(temp != NULL){
         n= new node;
         n->item= data;
         n->next= temp->next;
         temp->next= n;
-    }/*else{
-        cout<<"Your node is empty."<<endl;
-    }*/
+    }
 }
 
 //Definition of search function of linked list.
-node * SLL::search(int data){
+node * CircularSinglyLinkedList::search(int data){
     node *temp;
     temp= start;
-    while(temp != NULL){
+    do{
         if(temp->item == data){
             return temp;
         }
         temp= temp->next;
-    }
+    }while(temp != start);
     return NULL;
 }
 
 //Definition of deleteAtStart function of linked list.
-void SLL::deleteAtStart(){
+void CircularSinglyLinkedList::deleteAtStart(){
     node *temp;
     if(start){
         temp= start;
+        if(temp->next == start){
+            start= NULL;
+            return;
+        }
+        while(temp->next != start){
+            temp= temp->next;
+        }
+        node *toDelete= start;
+        temp->next= start->next;
         start= start->next;
-        delete temp;
+        delete toDelete, temp;
     }
 }
 
 //Definition of deleteAtLast function of linked list.
-void SLL::deleteAtLast(){
+void CircularSinglyLinkedList::deleteAtLast(){
     node *temp;
     if(start){
         temp= start;
-        if(temp->next == NULL){
-            delete temp;
-            start= NULL;
+        if(temp->next == start){
+            deleteAtStart();
         }else{
-            while(temp->next->next != NULL){
+            while(temp->next->next != start){
                 temp= temp->next;
             }
-            delete temp->next;
-            temp->next= NULL;
+            node *toDelete= temp->next;
+            temp->next= temp->next->next;
+            delete toDelete, temp;
         }
     }
 }
 
 //Definition of deleteSepcifiedNode function of linked list.
-void SLL::deleteSpecifiedNode(int data){
+void CircularSinglyLinkedList::deleteSpecifiedNode(int data){
     node *temp;
     bool checkElement= true;
     if (start){
         temp = start;
         if (temp->item == data){
-            start = start->next;
-            delete temp;
+            deleteAtStart();
+            checkElement= false;
         }
         else{
-            while (temp->next != NULL){
+            while (temp->next != start){
                 if (temp->next->item == data){
                     node *toDelete = temp->next;
                     temp->next = temp->next->next;
@@ -152,86 +169,84 @@ void SLL::deleteSpecifiedNode(int data){
 }
 
 //Definiton of reverse function of linked list.
-void SLL::reverse(){
-    node *tempNode;
-    tempNode= start;
-    node *previousPtr= NULL;
-    node *currentPtr= tempNode;
-    node *nextPtr;
+void CircularSinglyLinkedList::reverse(){
+    // node *tempNode= start;
+    // node *previousPtr= start;
+    // node *currentPtr= tempNode;
+    // node *nextPtr;
 
-    while(currentPtr != NULL){
-        nextPtr= currentPtr->next;
-        currentPtr->next = previousPtr;
+    // do{
+    //     nextPtr= currentPtr->next;
+    //     currentPtr->next = previousPtr;
         
-        previousPtr= currentPtr;
-        currentPtr= nextPtr;
-    }
-    start= previousPtr;
+    //     previousPtr= currentPtr;
+    //     currentPtr= nextPtr;
+    // }while(currentPtr != start);
+    // previousPtr->next= start;
+    // start= previousPtr;
 }
 
 //Definition of countNode function of linked list.
-int SLL::countNode(){
+int CircularSinglyLinkedList::length(){
     int count= 0;
-    node *temp;
-    temp= start;
-    if(temp == NULL){
-        return 0;
-    }else{
-        while(temp->next != NULL){
-            temp= temp->next;
-            count++;
-        }
-        return count+ 1;
-    }
-    cout<<endl;
+    node *temp= start;
+    do{
+        temp= temp->next;
+        count++;
+    }while(temp != start);
+    return count;
 }
 
 //Definition of display linked list elemnts function.
-void SLL::display(){
-    node* d= new node;
-    d= start;
+void CircularSinglyLinkedList::display(){
+    node* d= start;
     cout<<endl;
-    while(d != NULL){
-        cout<<"["<<d->item<<"]->";
-        d= d->next;
+    if(start){
+        do{
+            cout<<"["<<d->item<<"]->";
+            d= d->next;
+        }while(d != start);
+        cout<<"[First Node]"<<endl;
+    }else{
+        cout<<"There is no element in the Circular Linked List."<<endl;
     }
-    cout<<"[NULL]"<<endl;
+    
 }
 
 //Definition of destructor of the linked list.
-SLL::~SLL(){
+CircularSinglyLinkedList::~CircularSinglyLinkedList(){
     deleteAtStart();
 }
 
 //Main function code is here.
 int main(){
-    cout<<"Singly Linked List in C++ programming\n"<<endl;
+    cout<<"Circular Singly Linked List in C++ programming\n"<<endl;
 
     int choice, element;
-    SLL sll;
+    CircularSinglyLinkedList cSLL;
     node *t;
     t= NULL;
 
     while(1){
 
-        cout<<"_________________________________________________________________________________"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"|\t            **** Please Select Your Operation. ****                     |"<<endl;
-        cout<<"|-------------------------------------------------------------------------------|"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"|\t1-> Insert elements at the Start Singly Linked List.                    |"<<endl;
-        cout<<"|\t2-> Insert elements at the Last Singly Linked List.                     |"<<endl;
-        cout<<"|\t3-> Insert elements at the Specified Position of the Linked List.       |"<<endl;
-        cout<<"|\t4-> Searching elements in the Singly Linked List.                       |"<<endl;
-        cout<<"|\t5-> Delete element at the start of the Singly Linked List.              |"<<endl;
-        cout<<"|\t6-> Delete element at the last of the Singly Linked List.               |"<<endl;
-        cout<<"|\t7-> Delete element at the specified position of the Singly Linked List. |"<<endl;
-        cout<<"|\t8-> Reversing the List elements of the Singly Linked list.              |"<<endl;
-        cout<<"|\t9-> Total count of nodes in the Singly linked list.                     |"<<endl;
-        cout<<"|\t10-> Display Singly Linked List elements.                               |"<<endl;
-        cout<<"|\t11-> Exit.                                                              |"<<endl;
-        cout<<"|\t                                                                        |"<<endl;
-        cout<<"*********************************************************************************"<<endl<<endl;
+        cout<<"___________________________________________________________________________________________"<<endl;
+        cout<<"|\t                                                                                  |"<<endl;
+        cout<<"|\t            **** Please Select Your Operation. ****                               |"<<endl;
+        cout<<"|-----------------------------------------------------------------------------------------|"<<endl;
+        cout<<"|\t                                                                                  |"<<endl;
+        cout<<"|\t1-> Insert elements at the Start Circular Singly Linked List.                     |"<<endl;
+        cout<<"|\t2-> Insert elements at the Last Circular Singly Linked List.                      |"<<endl;
+        cout<<"|\t3-> Insert elements at the Specified Position of the Circular Linked List.        |"<<endl;
+        cout<<"|\t4-> Searching elements in the Circular Singly Linked List.                        |"<<endl;
+        cout<<"|\t5-> Delete element at the start of the Circular Singly Linked List.               |"<<endl;
+        cout<<"|\t6-> Delete element at the last of the Circular Singly Linked List.                |"<<endl;
+        cout<<"|\t7-> Delete element at the specified position of the Circular Singly Linked List.  |"<<endl;
+        cout<<"|\t8-> Reversing the List elements of the Circular Singly Linked list.               |"<<endl;
+        cout<<"|\t9-> Total count of nodes in the Circular Singly linked list.                      |"<<endl;
+        cout<<"|\t10-> Display Circular Singly Linked List elements.                                |"<<endl;
+        cout<<"|\t11-> Exit.                                                                        |"<<endl;
+        cout<<"|\t                                                                                  |"<<endl;
+        cout<<"*******************************************************************************************"<<endl<<endl;
         cout<<"Enter your choice here : ";
         cin>>choice;
 
@@ -240,18 +255,18 @@ int main(){
             case 1: {
                 cout<<"Enter element here : ";
                 cin>>element;
-                sll.insertAtStart(element);
+                cSLL.insertAtStart(element);
                 system("cls");
-                cout<<element<<" : is inserted successfully at the start of linked list."<<endl;
+                cout<<endl<<element<<" : is inserted successfully at the start of linked list."<<endl;
                 cout<<endl;
                 break;
             }
             case 2: {
                 cout<<"Enter element here : ";
                 cin>>element;
-                sll.insertAtLast(element);
+                cSLL.insertAtLast(element);
                 system("cls");
-                cout<<element<<" : is inserted successfully at the Last of linked list."<<endl;
+                cout<<endl<<element<<" : is inserted successfully at the Last of linked list."<<endl;
                 cout<<endl;
                 break;
             }
@@ -262,9 +277,9 @@ int main(){
                 }else{
                     cout<<"Enter element here : ";
                     cin>>element;
-                    sll.insertAtAfter(t, element);
+                    cSLL.insertAtAfter(t, element);
                     system("cls");
-                    cout<<element<<" : is inserted successfully at after : "<<t->item<<endl;
+                    cout<<endl<<element<<" : is inserted successfully at after : "<<t->item<<endl;
                 }
                 cout<<endl;
                 break;
@@ -273,7 +288,7 @@ int main(){
                 cout<<"Enter element here : ";
                 cin>>element;
                 system("cls");
-                if(t= sll.search(element)){
+                if(t= cSLL.search(element)){
                     cout<<endl;
                     cout<<"Its present in the linked list."<<endl;
                 }else{
@@ -284,14 +299,14 @@ int main(){
                 break;
             }
             case 5: {
-                sll.deleteAtStart();
+                cSLL.deleteAtStart();
                 system("cls");
                 cout<<"Element is deleted at start of this Linked list."<<endl;
                 cout<<endl;
                 break;
             }
             case 6: {
-                sll.deleteAtLast();
+                cSLL.deleteAtLast();
                 system("cls");
                 cout<<"Element is deleted at Last of this Linked list."<<endl;
                 cout<<endl;
@@ -301,29 +316,29 @@ int main(){
                 cout<<"Enter element here : ";
                 cin>>element;
                 system("cls");
-                sll.deleteSpecifiedNode(element);
+                cSLL.deleteSpecifiedNode(element);
                 //cout<<"Element is deleted at spcified position of this Linked list."<<endl;
                 cout<<endl;
                 break;
             }
             case 8: {
-                sll.reverse();
+                cSLL.reverse();
                 system("cls");
                 cout<<"Linked list has been reversed successfully."<<endl;
-                sll.display();
+                cSLL.display();
                 cout<<endl;
                 break;
             }
             case 9: {
                 int totalNode= 0;
-                totalNode= sll.countNode();
+                totalNode= cSLL.length();
                 system("cls");
-                cout<<"The total node is : "<<totalNode<<endl<<endl;
+                cout<<endl<<"The total node is : "<<totalNode<<endl<<endl;
                 break;
             }
             case 10: {
                 system("cls");
-                sll.display();
+                cSLL.display();
                 cout<<endl;
                 break;
             }

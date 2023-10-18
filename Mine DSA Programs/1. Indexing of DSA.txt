@@ -1,13 +1,20 @@
 // Indexing of Data Structure.
 
 1. Introduction to data Structure.
+
 2. Array DSA.
-    -> Assignment- 1.
-3. Dynamic Array DSA.
-    -> Assingment- 2.
-4. LinkedList DSA.
-    -> Singly LinkedList DSA.
+    => Static Array DSA.
+        -> Assignment- 1.
+    => Dynamic Array DSA.
+        -> Assingment- 2.
+
+3. LinkedList DSA.
+    => Singly Linked List DSA.
         -> Assingment- 3.
-    -> Doubly LinkedList DSA.
-        -> Assingment- 4.
-5. 
+    => Circular Singly Linked List DSA.
+        -> Assignment- 4
+    => Doubly LinkedList DSA.
+        -> Assingment- 5.
+    => Circular DOubly Linked List DSA.
+
+4. Stack DSA.
