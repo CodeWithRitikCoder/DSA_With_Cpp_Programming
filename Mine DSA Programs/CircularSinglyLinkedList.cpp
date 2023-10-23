@@ -182,7 +182,6 @@ void CircularSinglyLinkedList::reverse(){
     //     previousPtr= currentPtr;
     //     currentPtr= nextPtr;
     // }while(currentPtr != start);
-    // previousPtr->next= start;
     // start= previousPtr;
 }
 
@@ -324,8 +323,9 @@ int main(){
             case 8: {
                 cSLL.reverse();
                 system("cls");
-                cout<<"Linked list has been reversed successfully."<<endl;
-                cSLL.display();
+                cout<<"Reverse Fnction is about to come."<<endl;
+                //cout<<"Linked list has not been reversed successfully."<<endl;
+                //cSLL.display();
                 cout<<endl;
                 break;
             }
@@ -352,14 +352,6 @@ int main(){
                 break;
             }
         }
-
-        //This condition is used to Clear screen at the specific conditions.
-        // if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
-        //     //Do nothing.
-        // }else{
-        //     system("cls");
-        // }
-
     }
     
     //getch();

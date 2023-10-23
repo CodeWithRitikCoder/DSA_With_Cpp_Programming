@@ -8,13 +8,22 @@
     => Dynamic Array DSA.
         -> Assingment- 2.
 
-3. LinkedList DSA.
+3. Linked List DSA.
     => Singly Linked List DSA.
         -> Assingment- 3.
-    => Circular Singly Linked List DSA.
+    => Circular Singly Linked List DSA. - incomplete reverse function.
         -> Assignment- 4
-    => Doubly LinkedList DSA.
+    => Doubly LinkedList DSA. - incomplete delete specify node
         -> Assingment- 5.
-    => Circular DOubly Linked List DSA.
+    => Circular DOubly Linked List DSA. - incomplete whole.
 
 4. Stack DSA.
+    => Stack using Array.
+        -> Assingment- 6.
+        -> Stack Application to Reverse a Sentence.
+    => Stack using Dynamic Array. - about to come.
+        -> Assingment- 7.
+    => Stack using Linked List. - about to come.
+        -> Assingment- 8.
+
+5.

@@ -134,22 +134,64 @@ void DoublyLinkedList::deleteAtLast(){
 
 //Definition of deleteSpecifiedNode function of class DoublyLinkedList.
 void DoublyLinkedList::deleteSpecifiedNode(int value){
-    node *tempToDelete;
-    tempToDelete= start;
-    while(tempToDelete){
-        if(tempToDelete->data == value){
-            if(tempToDelete->previousNode == NULL && tempToDelete->nextNode == NULL){
-                start= NULL;
+    // not working still now
+    node *temp= start;
+
+    // if(temp->data == value){
+    //     deleteAtStart();
+    //     return;
+    // }
+    // while(temp != NULL && temp->data != value){
+    //     temp= temp->nextNode;
+    // }
+    // temp->previousNode->nextNode= temp->nextNode;
+    // if(temp->nextNode != NULL){
+    //     temp->nextNode->previousNode= temp->previousNode;
+    // }
+    // delete temp;
+
+    // while(t)
+    // {
+    //     if(t->data == value)
+    //     {
+    //         if(t->nextNode != NULL){
+    //             t->nextNode->previousNode= t->previousNode;
+    //             }
+    //         else if(t->previousNode != NULL){
+    //             t->previousNode->nextNode= t->nextNode;
+    //             }
+    //         else if(t->previousNode == NULL){
+    //             start= t->nextNode;
+    //             }
+    //         else if(t->nextNode == NULL){
+    //             t->previousNode->nextNode= NULL;
+    //             }
+    //         delete t;
+    //         break;
+    //     }
+    //     t=t->nextNode;
+    // }
+
+    while(temp){
+        if(temp->data == value){
+            if(temp->previousNode == NULL){
+                deleteAtStart();
+                break;
             }
-            else if(tempToDelete->previousNode == NULL){
-                start= tempToDelete->nextNode;
-                start->previousNode= NULL;
+            else if(temp->nextNode == NULL){
+                deleteAtLast();
+                break;
             }
-           delete tempToDelete;
-           break;      
+            else if(temp->nextNode != NULL && temp->previousNode != NULL){
+                temp->previousNode->nextNode= temp->nextNode;
+                temp->nextNode->previousNode= temp->previousNode;
+                break;
+            }
         }
-        tempToDelete= tempToDelete->nextNode;
+        temp= temp->nextNode;
     }
+    delete temp;
+
 }
 
 //Definition of reverse function of class DoublyLinkedList.
@@ -334,17 +376,17 @@ int main(){
             }
             default :{
                 system("cls");
-                cout<<"Invalid choice! Please choice a valid option."<<endl;
+                cout<<endl<<"Invalid choice! Please choice a valid option."<<endl<<endl;
                 break;
             }
         }
 
         //This condition is used to Clear screen at the specific conditions.
-        if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
-            //Do nothing.
-        }else{
-            system("cls");
-        }
+        // if(choice == 9 || choice == 10 || choice == 8 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7){
+        //     //Do nothing.
+        // }else{
+        //     system("cls");
+        // }
 
     }    
     
