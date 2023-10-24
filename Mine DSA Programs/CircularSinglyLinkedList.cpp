@@ -1,4 +1,4 @@
-//Write a program to implement Circular Linked List Data Structure in C++ programming with Ritik.
+//Write a program to implement Circular singly Linked List Data Structure in C++ programming with Ritik.
 #include"iostream"
 #include"conio.h"
 using namespace std;

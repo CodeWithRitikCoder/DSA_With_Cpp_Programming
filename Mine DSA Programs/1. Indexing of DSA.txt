@@ -15,7 +15,7 @@
         -> Assignment- 4
     => Doubly LinkedList DSA. - incomplete delete specify node
         -> Assingment- 5.
-    => Circular DOubly Linked List DSA. - incomplete whole.
+    => Circular DOubly Linked List DSA. - incomplete reverse only.
 
 4. Stack DSA.
     => Stack using Array.

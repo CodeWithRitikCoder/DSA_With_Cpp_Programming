@@ -1,4 +1,10 @@
 //Write a program to Use Stack Data Structure using Array in C++ programming with Ritik.
+/*
+Notes:-
+        => What is Stack Data Structure ?
+        -> Stack is used to stores a list of items in which an item can be added to or removed from the list only at one end.
+        -> And it is based on the LIFO machinism it means (Last IN First Out).
+*/
 #include"iostream"
 #include"conio.h"
 using namespace std;
@@ -108,6 +114,22 @@ int StackUsingArray::getSize(){
     return (top+ 1);
 }
 
+// Function for = Assignment operator overloading.
+StackUsingArray& StackUsingArray::operator=(StackUsingArray &tempStack){
+    if(this != &tempStack){
+        capacity= tempStack.capacity;
+        top= tempStack.top;
+        if(ptr != NULL){
+            delete []ptr;
+        }
+        ptr= new int[capacity];
+        for(int i= 0; i<= top; i++){
+            ptr[i]= tempStack.ptr[i];
+        }
+    }
+    return *this;
+}
+
 void StackUsingArray::displayStack(){
     if(isEmpty()){
         cout<<"There is no element in the stack."<<endl;
@@ -137,7 +159,7 @@ int main(){
     system("cls");
     cout<<"Stack is Created successfully this size of : "<<n<<endl;
 
-    while(1){
+    /*while(1){
 
         cout<<"_________________________________________________"<<endl;
         cout<<"|\t                                        |"<<endl;
@@ -222,7 +244,7 @@ int main(){
                 break;
             }
         }
-    }
+    }*/
 
     // cout<<sUA.pop()<<" : popped"<<endl;
     // cout<<sUA.peek()<<" : is on the peek."<<endl;
@@ -235,6 +257,17 @@ int main(){
     // cout<<sUA.peek()<<" : is on the peek."<<endl;
     // sUA.reverse();
     // sUA.displayStack();
+
+    sUA.push(1);
+    sUA.push(2);
+    sUA.push(3);
+    sUA.push(4);
+    sUA.displayStack();
+    cout<<"Peeked element is : "<<sUA.peek();
+    StackUsingArray s(sUA);
+    cout<<endl;
+    s.push(6);
+    s.displayStack();
 
     //getch();
     return(0);
