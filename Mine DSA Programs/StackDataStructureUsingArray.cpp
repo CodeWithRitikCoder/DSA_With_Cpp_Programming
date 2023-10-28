@@ -130,6 +130,7 @@ StackUsingArray& StackUsingArray::operator=(StackUsingArray &tempStack){
     return *this;
 }
 
+// Function for displayingStack() data.
 void StackUsingArray::displayStack(){
     if(isEmpty()){
         cout<<"There is no element in the stack."<<endl;
@@ -148,6 +149,8 @@ StackUsingArray::~StackUsingArray(){
 }
 
 int main(){
+
+    system("Color 02");
     cout<<"Stack Data structure using Array in C++ programming\n"<<endl;
 
     int choice, element, n;
@@ -159,7 +162,7 @@ int main(){
     system("cls");
     cout<<"Stack is Created successfully this size of : "<<n<<endl;
 
-    /*while(1){
+    while(1){
 
         cout<<"_________________________________________________"<<endl;
         cout<<"|\t                                        |"<<endl;
@@ -244,7 +247,7 @@ int main(){
                 break;
             }
         }
-    }*/
+    }
 
     // cout<<sUA.pop()<<" : popped"<<endl;
     // cout<<sUA.peek()<<" : is on the peek."<<endl;
@@ -258,16 +261,16 @@ int main(){
     // sUA.reverse();
     // sUA.displayStack();
 
-    sUA.push(1);
-    sUA.push(2);
-    sUA.push(3);
-    sUA.push(4);
-    sUA.displayStack();
-    cout<<"Peeked element is : "<<sUA.peek();
-    StackUsingArray s(sUA);
-    cout<<endl;
-    s.push(6);
-    s.displayStack();
+    // sUA.push(1);
+    // sUA.push(2);
+    // sUA.push(3);
+    // sUA.push(4);
+    // sUA.displayStack();
+    // cout<<"Peeked element is : "<<sUA.peek();
+    // StackUsingArray s(sUA);
+    // cout<<endl;
+    // s.push(6);
+    // s.displayStack();
 
     //getch();
     return(0);

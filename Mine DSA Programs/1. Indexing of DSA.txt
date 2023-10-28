@@ -2,13 +2,13 @@
 
 1. Introduction to data Structure.
 
-2. Array DSA.
+2. Array Data Structure.
     => Static Array DSA.
         -> Assignment- 1.
     => Dynamic Array DSA.
         -> Assingment- 2.
 
-3. Linked List DSA.
+3. Linked List Data Structure.
     => Singly Linked List DSA.
         -> Assingment- 3.
     => Circular Singly Linked List DSA. - incomplete reverse function.
@@ -17,13 +17,15 @@
         -> Assingment- 5.
     => Circular DOubly Linked List DSA. - incomplete reverse only.
 
-4. Stack DSA.
-    => Stack using Array.
+4. Stack Data Structure.
+    => Stack Data Structure using Array.
         -> Assingment- 6.
         -> Stack Application to Reverse a Sentence.
-    => Stack using Dynamic Array. - about to come.
+    => Stack Data Structure using Dynamic Array. - about to come.
         -> Assingment- 7.
     => Stack using Linked List. - about to come.
         -> Assingment- 8.
 
-5.
+5. Queue Data Structure.
+    => Queue Data Structure Using Array.
+        -> Assignment- 9
