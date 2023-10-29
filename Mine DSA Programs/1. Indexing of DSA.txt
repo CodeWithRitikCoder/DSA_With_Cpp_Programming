@@ -13,7 +13,7 @@
         -> Assingment- 3.
     => Circular Singly Linked List DSA. - incomplete reverse function.
         -> Assignment- 4
-    => Doubly LinkedList DSA. - incomplete delete specify node
+    => Doubly Linked List DSA. - incomplete delete specify node
         -> Assingment- 5.
     => Circular DOubly Linked List DSA. - incomplete reverse only.
 
@@ -29,3 +29,7 @@
 5. Queue Data Structure.
     => Queue Data Structure Using Array.
         -> Assignment- 9
+    => Queue Data Structure Using Dynamic Array. - about to come.
+        -> Assignment- 10
+    => Queue Data Strucute Using Linked List.
+        -> Assignment- 11
