@@ -23,7 +23,7 @@
         -> Stack Application to Reverse a Sentence.
     => Stack Data Structure using Dynamic Array. - about to come.
         -> Assingment- 7.
-    => Stack using Linked List. - about to come.
+    => Stack using Linked List.
         -> Assingment- 8.
 
 5. Queue Data Structure.
