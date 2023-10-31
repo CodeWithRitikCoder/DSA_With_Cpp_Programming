@@ -29,7 +29,9 @@
 5. Queue Data Structure.
     => Queue Data Structure Using Array.
         -> Assignment- 9
-    => Queue Data Structure Using Dynamic Array. - about to come.
+    => Queue Data Structure Using Circular Array.
         -> Assignment- 10
-    => Queue Data Strucute Using Linked List.
+    => Queue Data Structure Using Dynamic Array. - about to come.
         -> Assignment- 11
+    => Queue Data Strucute Using Linked List.
+        -> Assignment- 12

@@ -75,7 +75,7 @@ void QueueUsingArray::enQueue(int data){
 // Function for pop()/deQueue() Front element of the Queue.
 void QueueUsingArray::deQueue(){
     if(isEmpty()){
-        cout<<"There is not element to deQueue in Queue."<<endl;
+        cout<<"There is no element to deQueue in Queue."<<endl;
         return;
     }else{
         front++;
@@ -86,7 +86,7 @@ void QueueUsingArray::deQueue(){
 // Function for peekFront() Front element of the Queue.
 int QueueUsingArray::peekFront(){
     if(isEmpty()){
-        cout<<"There is not element to Peek Front in Queue."<<endl;
+        cout<<"There is no element to Peek Front in Queue."<<endl;
         return -1;
     }
     return queueArray[front];
@@ -95,7 +95,7 @@ int QueueUsingArray::peekFront(){
 // Function for peekBack() Back element of the Queue.
 int QueueUsingArray::peekBack(){
     if(isEmpty()){
-        cout<<"There is not element to Peek Back in Queue."<<endl;
+        cout<<"There is no element to Peek Back in Queue."<<endl;
         return -1;
     }
     return queueArray[back];
@@ -144,7 +144,7 @@ QueueUsingArray& QueueUsingArray::operator=(QueueUsingArray &tempStack){
 // Function for displayQueue() data.
 void QueueUsingArray::displayQueue(){
     if(isEmpty()){
-        cout<<"There is no element in the Queue."<<endl;
+        cout<<"There is no element to Display in the Queue."<<endl;
     }else{
         for(int i= front; i<= back; i++){
             cout<<queueArray[i]<<" <- ";
