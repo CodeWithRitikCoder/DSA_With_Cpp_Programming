@@ -26,8 +26,9 @@ class QueueUsingLinkedList{
     void deQueue(); // This function is used to pop/remove/deQueue Front element of the Queue.
     int peekFront(); // This function is used to peek/view front element of the Queue.
     int peekBack(); // This function is used to peek/view Back element of the Queue.
-    bool reverse(); // This function is used to reverse Queue elements.
+    int reverse(); // This function is used to reverse Queue elements.
     int getSize(); //This function is used to get filled size of the Queue.
+    void clearQueue(); //This function is used to clear whole Queue.
     QueueUsingLinkedList& operator=(QueueUsingLinkedList &); //This is Assignment operloading.
     void displayQueue(); // This function is used to print inserted element of the Queue.
     ~QueueUsingLinkedList(); // This is a distructor of this QueueUsingLinkedList's class to dealocated initialized memory..
@@ -95,9 +96,11 @@ int QueueUsingLinkedList::peekBack(){
 }
 
 // Function for reverse() elements of the Queue.
-bool QueueUsingLinkedList::reverse(){
+int QueueUsingLinkedList::reverse(){
     if(front == NULL){
-        return false;
+        return -1;
+    }else if(front->next == NULL){
+        return 0;
     }else{
         node *tempNode;
         tempNode= front;
@@ -112,9 +115,10 @@ bool QueueUsingLinkedList::reverse(){
             previousPtr= currentPtr;
             currentPtr= nextPtr;
         }
+        back= front;
         front= previousPtr;
 
-        return true;
+        return 1;
     }
 }
 
@@ -127,6 +131,16 @@ int QueueUsingLinkedList::getSize(){
         countNode++;
     }
     return countNode;
+}
+
+// Function for clearQueue() whole Queue.
+void QueueUsingLinkedList::clearQueue(){
+    if(isEmpty()){
+        cout<<"Queue is Already Empty."<<endl;
+    }else{
+        front= NULL;
+        cout<<"The Whole Queue is Clear Successfully."<<endl;
+    }
 }
 
 // Function for displayQueue() data.
@@ -172,7 +186,8 @@ int main(){
         cout<<"|       6-> Display elements of Queue.            |"<<endl;
         cout<<"|       7-> Queue is Empty of Not.                |"<<endl;
         cout<<"|       8-> Total element count of Queue.         |"<<endl;
-        cout<<"|       9-> Exit.                                 |"<<endl;
+        cout<<"|       9-> Clear Whole Queue.                    |"<<endl;
+        cout<<"|       10-> Exit.                                |"<<endl;
         cout<<"|                                                 |"<<endl;
         cout<<"***************************************************"<<endl<<endl;
         cout<<"Enter your choice here : ";
@@ -209,10 +224,14 @@ int main(){
                 break;
             }
             case 5: {
-                if(qUL.reverse()){
+                int temp= qUL.reverse();
+                if(temp == 1){
                     system("cls");
                     cout<<"Queue has been reversed successfully."<<endl<<endl;
                     qUL.displayQueue();
+                }else if(temp == 0){
+                    system("cls");
+                    cout<<"Only one Element is Present in the Queue so we can't Reverse this Queue."<<endl;
                 }else{
                     system("cls");
                     cout<<"Can't Reverse because of Empty Queue."<<endl;
@@ -239,6 +258,11 @@ int main(){
                 break;
             }
             case 9: {
+                system("cls");
+                qUL.clearQueue();
+                break;
+            }
+            case 10: {
                 exit(1);
                 break;
             }

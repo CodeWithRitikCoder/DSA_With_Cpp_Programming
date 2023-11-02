@@ -27,6 +27,7 @@ class QueueUsingCircularArray{
     int peekBack(); // This function is used to peek/view Back element of the Queue.
     bool reverse(); // This function is used to reverse Queue elements.
     int getSize(); //This function is used to get filled size of the Queue.
+    void clearQueue(); //This function is used to clear whole Queue.
     QueueUsingCircularArray& operator=(QueueUsingCircularArray &); //This is Assignment operloading.
     void displayQueue(); // This function is used to print inserted element of the Queue.
     ~QueueUsingCircularArray(); // This is a distructor of this QueueUsingCircularArray's class to dealocated initialized memory..
@@ -60,7 +61,7 @@ bool QueueUsingCircularArray::isEmpty(){
 // Function for push()/enQueue() a new element in the Queue.
 void QueueUsingCircularArray::enQueue(int data){
     if(isFull()){
-       cout<<"Queue is overFlow."<<endl;
+       cout<<"Queue is overFlow - for enQueue : "<<data<<endl;
     }else if(back != capacity- 1){
         back++;
         queueArray[back]= data;
@@ -145,6 +146,16 @@ int QueueUsingCircularArray::getSize(){
     }
 }
 
+// Function for clearQueue() whole Queue.
+void QueueUsingCircularArray::clearQueue(){
+    if(isEmpty()){
+        cout<<"Queue is Already Empty."<<endl;
+    }else{
+        front= back= -1;
+        cout<<"The Whole Queue is Clear Successfully."<<endl;
+    }
+}
+
 // Function for = Assignment operator overloading.
 QueueUsingCircularArray& QueueUsingCircularArray::operator=(QueueUsingCircularArray &tempStack){
     if(this != &tempStack){
@@ -182,6 +193,9 @@ void QueueUsingCircularArray::displayQueue(){
                 cout<<queueArray[i]<<" <- ";
             }
         }
+        if(isFull()){
+            cout<<"FULL";
+        }
         cout<<endl;
     }
 }
@@ -196,16 +210,17 @@ int main(){
     system("Color 02");
     cout<<"Queue Data structure using Circular Array in C++ programming\n"<<endl;
 
-    int choice, element, n;
+    int choice, element, n= 10;
 
-    cout<<"Enter the Size to Create Queue = ";
-    cin>>n;
+    // cout<<"Enter the Size to Create Queue = ";
+    // cin>>n;
     QueueUsingCircularArray qUCA(n);
 
     system("cls");
     cout<<"Queue is Created successfully the size of : "<<n<<endl;
 
-    /*while(1){
+    /*
+    while(1){
 
         cout<<"___________________________________________________"<<endl;
         cout<<"|                                                 |"<<endl;
@@ -238,52 +253,52 @@ int main(){
             }
             case 2: {
                 system("cls");
-                qUCA.deQueue();
+                //qUCA.deQueue();
                 break;
             }
             case 3: {
                 system("cls");
-                int temp= qUCA.peekFront();
-                if(temp != -1){
-                    cout<<temp<<" : is Present on the Front of Queue."<<endl;
-                }
+                // int temp= qUCA.peekFront();
+                // if(temp != -1){
+                //     cout<<temp<<" : is Present on the Front of Queue."<<endl;
+                // }
                 break;
             }
             case 4: {
                 system("cls");
-                int temp= qUCA.peekBack();
-                if(temp != -1){
-                    cout<<temp<<" : is Present on the Back of Queue."<<endl;
-                }
+                // int temp= qUCA.peekBack();
+                // if(temp != -1){
+                //     cout<<temp<<" : is Present on the Back of Queue."<<endl;
+                // }
                 break;
             }
             case 5: {
-                if(qUCA.reverse()){
-                    system("cls");
-                    cout<<"Queue has been reversed successfully."<<endl<<endl;
-                    qUCA.displayQueue();
-                }else{
-                    system("cls");
-                    cout<<"Can't Reverse because of Empty Queue."<<endl;
-                }    
+                // if(qUCA.reverse()){
+                //     system("cls");
+                //     cout<<"Queue has been reversed successfully."<<endl<<endl;
+                //     qUCA.displayQueue();
+                // }else{
+                //     system("cls");
+                //     cout<<"Can't Reverse because of Empty Queue."<<endl;
+                // }    
                 break;
             }
             case 6: {
                 system("cls");
-                if(qUCA.isFull()){
-                    cout<<"Queue is FULL."<<endl;
-                }else{
-                    cout<<"Queue is not FULL."<<endl;
-                }
+                // if(qUCA.isFull()){
+                //     cout<<"Queue is FULL."<<endl;
+                // }else{
+                //     cout<<"Queue is not FULL."<<endl;
+                // }
                 break;
             }
             case 7: {
                 system("cls");
-                if(qUCA.isEmpty()){
-                    cout<<"Queue is Empty."<<endl;
-                }else{
-                    cout<<"Queue is not Empty."<<endl;
-                }
+                // if(qUCA.isEmpty()){
+                //     cout<<"Queue is Empty."<<endl;
+                // }else{
+                //     cout<<"Queue is not Empty."<<endl;
+                // }
                 break;
             }
             case 8: {
@@ -293,7 +308,7 @@ int main(){
             }
             case 9: {
                 system("cls");
-                cout<<qUCA.getSize()<<" : elements is present in the Queue."<<endl;
+                //cout<<qUCA.getSize()<<" : elements is present in the Queue."<<endl;
                 break;
             }
             case 10: {
@@ -306,7 +321,16 @@ int main(){
                 break;
             }
         }
-    }*/
+    }
+    */
+
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+    cout<<endl;
 
     qUCA.enQueue(10);
     qUCA.enQueue(20);
@@ -316,105 +340,204 @@ int main(){
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(50);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(60);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(70);
+    qUCA.enQueue(80);
+    qUCA.enQueue(90);
+    qUCA.enQueue(100);
+    qUCA.enQueue(110);
+    qUCA.enQueue(120);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(70);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(80);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(90);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(120);
+    qUCA.enQueue(130);
+    qUCA.enQueue(140);
+    qUCA.enQueue(150);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    qUCA.deQueue();
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
-    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    qUCA.enQueue(10);
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    qUCA.enQueue(20);
-    qUCA.enQueue(30);
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    qUCA.enQueue(40);
-    qUCA.enQueue(50);
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    qUCA.enQueue(50);
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
-    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    qUCA.deQueue();
-    qUCA.deQueue();
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
-    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    qUCA.deQueue();
-    qUCA.deQueue();
-    qUCA.deQueue();
-    qUCA.displayQueue();
-    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(10);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(20);
+    qUCA.enQueue(30);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.deQueue();
+    qUCA.enQueue(50);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(50);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(10);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(20);
     qUCA.enQueue(30);
     qUCA.enQueue(40);
@@ -423,15 +546,19 @@ int main(){
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.enQueue(60);
     qUCA.displayQueue();
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
     qUCA.deQueue();
     qUCA.deQueue();
     qUCA.deQueue();
@@ -441,8 +568,115 @@ int main(){
     cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
     cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
     cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
-    cout<<qUCA.isFull()<<endl;
-    cout<<qUCA.isEmpty()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(10);
+    qUCA.enQueue(20);
+    qUCA.enQueue(30);
+    qUCA.enQueue(40);
+    qUCA.enQueue(50);
+    qUCA.enQueue(60);
+    qUCA.enQueue(70);
+    qUCA.enQueue(80);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.clearQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(10);
+    qUCA.enQueue(20);
+    qUCA.enQueue(30);
+    qUCA.enQueue(40);
+    qUCA.enQueue(50);
+    qUCA.enQueue(60);
+    qUCA.enQueue(70);
+    qUCA.enQueue(80);
+    qUCA.enQueue(90);
+    qUCA.enQueue(100);
+    qUCA.enQueue(110);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue();
+    qUCA.deQueue(); //extra deQueue.
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.clearQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.enQueue(90);
+    qUCA.enQueue(100);
+    qUCA.enQueue(110);
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
+    qUCA.clearQueue();
+    qUCA.displayQueue();
+    cout<<"Now the size of filled queue is : "<<qUCA.getSize()<<endl;
+    cout<<"Element at the front of the queue : "<<qUCA.peekFront()<<endl;
+    cout<<"Element at the back of the queue : "<<qUCA.peekBack()<<endl;
+    cout<<"Queue is Full or not : "<<qUCA.isFull()<<endl;
+    cout<<"Queue is Empty or not : "<<qUCA.isEmpty()<<endl;
+
+    cout<<endl;
 
     //getch();
     return(0);
