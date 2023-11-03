@@ -43,7 +43,7 @@ QueueUsingLinkedList::QueueUsingLinkedList(){
 
 // Function for checking the Queue is empty or not.
 bool QueueUsingLinkedList::isEmpty(){
-    return (front == NULL);
+    return (front == NULL && back == NULL);
 }
 
 // Function for push()/enQueue() a new element in the Queue.
@@ -69,6 +69,9 @@ void QueueUsingLinkedList::deQueue(){
         cout<<"There is not element to deQueue in Queue."<<endl;
     }else{
         node *toDelete= front;
+        if(front == back){
+            back= NULL;
+        }
         front= front->next;
         cout<<"Front is deQueue Successfully from the Queue."<<endl;
         delete toDelete;
@@ -138,7 +141,7 @@ void QueueUsingLinkedList::clearQueue(){
     if(isEmpty()){
         cout<<"Queue is Already Empty."<<endl;
     }else{
-        front= NULL;
+        front= back=  NULL;
         cout<<"The Whole Queue is Clear Successfully."<<endl;
     }
 }
