@@ -35,3 +35,6 @@
         -> Assignment- 11
     => Queue Data Strucute Using Linked List.
         -> Assignment- 12
+
+6. DEQueue - (Double Ended Queue).
+    => DEQueue Data Structure Using Doubly Linked List.
