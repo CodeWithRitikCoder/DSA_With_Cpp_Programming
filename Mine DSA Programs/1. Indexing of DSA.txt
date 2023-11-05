@@ -37,4 +37,5 @@
         -> Assignment- 12
 
 6. DEQueue - (Double Ended Queue).
-    => DEQueue Data Structure Using Doubly Linked List.
+    => DEQueue Data Structure Using Doubly Linked List - (First Method).
+    => DEQueue Data Structure Using Doubly Linked List 2 - (Second Method).
