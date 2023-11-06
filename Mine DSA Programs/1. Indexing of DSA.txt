@@ -1,41 +1,55 @@
-// Indexing of Data Structure.
-
-1. Introduction to data Structure.
-
-2. Array Data Structure.
-    => Static Array DSA.
-        -> Assignment- 1.
-    => Dynamic Array DSA.
-        -> Assingment- 2.
-
-3. Linked List Data Structure.
-    => Singly Linked List DSA.
-        -> Assingment- 3.
-    => Circular Singly Linked List DSA. - incomplete reverse function.
-        -> Assignment- 4
-    => Doubly Linked List DSA. - incomplete delete specify node
-        -> Assingment- 5.
-    => Circular DOubly Linked List DSA. - incomplete reverse only.
-
-4. Stack Data Structure.
-    => Stack Data Structure using Array.
-        -> Assingment- 6.
-        -> Stack Application to Reverse a Sentence.
-    => Stack Data Structure using Dynamic Array. - about to come.
-        -> Assingment- 7.
-    => Stack using Linked List.
-        -> Assingment- 8.
-
-5. Queue Data Structure.
-    => Queue Data Structure Using Array.
-        -> Assignment- 9
-    => Queue Data Structure Using Circular Array.
-        -> Assignment- 10
-    => Queue Data Structure Using Dynamic Array. - about to come.
-        -> Assignment- 11
-    => Queue Data Strucute Using Linked List.
-        -> Assignment- 12
-
-6. DEQue - (Double Ended Queue).
-    => DEQue Data Structure Using Doubly Linked List - (First Method).
-    => DEQue Data Structure Using Doubly Linked List 2 - (Second Method).
+__________________________________________________________________________________________________________
+|                      ****** Indexing of Data Structure. ******                                         |
+|--------------------------------------------------------------------------------------------------------|
+|                                                                                                        |
+|      *---------------* 1. Introduction to Data Structures and Algorithms. *---------------*            |
+|                                                                                                        |
+|--------------------------------------------------------------------------------------------------------|
+| 1. Introduction to Data Structure.                                                                     |
+|                                                                                                        |
+| 2. Array Data Structure.                                                                               |
+|   => Static Array DSA.                                                                                 |
+|       -> Assignment- 1.                                                                                |
+|   => Dynamic Array DSA.                                                                                |
+|       -> Assingment- 2.                                                                                |
+|                                                                                                        |
+| 3. Linked List Data Structure.                                                                         |
+|   => Singly Linked List DSA.                                                                           |
+|       -> Assingment- 3.                                                                                |
+|   => Circular Singly Linked List DSA. - incomplete reverse function.                                   |
+|       -> Assignment- 4                                                                                 |
+|   => Doubly Linked List DSA. - incomplete delete specify node                                          |
+|       -> Assingment- 5.                                                                                |
+|   => Circular DOubly Linked List DSA. - incomplete reverse only.                                       |
+|                                                                                                        |
+| 4. Stack Data Structure.                                                                               |
+|   => Stack Data Structure using Array.                                                                 |
+|       -> Assingment- 6.                                                                                |
+|       -> Stack Application to Reverse a Sentence.                                                      |
+|   => Stack Data Structure using Dynamic Array. - about to come.                                        |
+|       -> Assingment- 7.                                                                                |
+|   => Stack using Linked List.                                                                          |
+|       -> Assingment- 8.                                                                                |
+|                                                                                                        |
+| 5. Queue Data Structure.                                                                               |
+|   => Queue Data Structure Using Array.                                                                 |
+|       -> Assignment- 9                                                                                 |
+|   => Queue Data Structure Using Circular Array.                                                        |
+|       -> Assignment- 10                                                                                |
+|   => Queue Data Structure Using Dynamic Array. - about to come.                                        |
+|       -> Assignment- 11                                                                                |
+|   => Queue Data Strucute Using Linked List.                                                            |
+|       -> Assignment- 12                                                                                |
+|                                                                                                        |
+| 6. DEQue - (Double Ended Queue).                                                                       |
+|   => DEQue Data Structure Using Doubly Linked List. - (First Method).                                  |
+|       -> Assignment- 13                                                                                |
+|   => DEQue Data Structure Using Doubly Linked List 2. - (Second Method).                               |
+|       -> Assignment- 14                                                                                |
+|   => Restricted Input DEQue. - Insertion from Front is not Allowed. - about to come.                   |
+|       -> Assignment- 15                                                                                |
+|   => Restricted Output DEQue. - Deletion from Rear is not Allowed. - about to come.                    |
+|       -> Assignment- 16                                                                                |
+|                                                                                                        |
+|                                                                                                        |
+**********************************************************************************************************
