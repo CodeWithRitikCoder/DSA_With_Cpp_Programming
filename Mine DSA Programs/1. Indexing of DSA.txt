@@ -41,7 +41,7 @@ ________________________________________________________________________________
 |   => Queue Data Strucute Using Linked List.                                                            |
 |       -> Assignment- 12                                                                                |
 |                                                                                                        |
-| 6. DEQue - (Double Ended Queue).                                                                       |
+| 6. DEQue Data Structure. - (Double Ended Queue).                                                       |
 |   => DEQue Data Structure Using Doubly Linked List. - (First Method).                                  |
 |       -> Assignment- 13                                                                                |
 |   => DEQue Data Structure Using Doubly Linked List 2. - (Second Method).                               |
@@ -50,6 +50,10 @@ ________________________________________________________________________________
 |       -> Assignment- 15                                                                                |
 |   => Restricted Output DEQue. - Deletion from Rear is not Allowed. - about to come.                    |
 |       -> Assignment- 16                                                                                |
+|                                                                                                        |
+| 7. PriorityQueue Data Structure.                                                                       |
+|   => PriorityQueue Data Structure Using Singly Linked List.                                            |
+|       -> Assignment- 17                                                                                |
 |                                                                                                        |
 |                                                                                                        |
 **********************************************************************************************************

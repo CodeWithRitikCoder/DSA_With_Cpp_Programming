@@ -17,7 +17,7 @@ struct node {
 //Class is here.
 class QueueUsingLinkedList{
     private:
-    node *front, *back; // This if our Front and back tracker for the Queue.
+    node *front, *back; // This of our Front and back tracker for the Queue.
 
     public:
     QueueUsingLinkedList(); // This is the constructor of QueueUsingLinkedList's Class to initialize the member variables.
@@ -66,7 +66,7 @@ void QueueUsingLinkedList::enQueue(int value){
 // Function for pop()/deQueue() Front element of the Queue.
 void QueueUsingLinkedList::deQueue(){
     if(front == NULL){
-        cout<<"There is not element to deQueue in Queue."<<endl;
+        cout<<"There is no element to deQueue in Queue."<<endl;
     }else{
         node *toDelete= front;
         if(front == back){
@@ -133,6 +133,7 @@ int QueueUsingLinkedList::getSize(){
         temp= temp->next;
         countNode++;
     }
+    delete temp;
     return countNode;
 }
 
@@ -157,6 +158,7 @@ void QueueUsingLinkedList::displayQueue(){
             temp= temp->next;
         }
         cout<<"[NULL]"<<endl;
+        delete temp;
     }
 }
 
