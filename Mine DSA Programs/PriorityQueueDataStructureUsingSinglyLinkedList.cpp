@@ -2,7 +2,13 @@
 /*
 Notes:-
         => What is PriorityQueue Data Structure ?
-        ->
+        -> A priority queue is a type of queue that arranges elements based on their priority values. Elements with higher priority values are typically retrieved before elements with lower priority values.
+
+        -> In a priority queue, each element has a priority value associated with it. When you add an element to the queue, it is inserted in a position based on its priority value. For example, if you add an element with a high priority value to a priority queue, it may be inserted near the front of the queue, while an element with a low priority value may be inserted near the back.
+
+        -> There are several ways to implement a priority queue, including using an array, linked list, heap, or binary search tree. Each method has its own advantages and disadvantages, and the best choice will depend on the specific needs of your application.
+
+        -> Priority queues are often used in real-time systems, where the order in which elements are processed can have significant consequences. They are also used in algorithms to improve their efficiencies, such as Dijkstra’s algorithm for finding the shortest path in a graph and the A* search algorithm for pathfinding.
 */
 #include"iostream"
 #include"conio.h"
