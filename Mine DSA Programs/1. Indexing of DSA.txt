@@ -54,8 +54,13 @@ ________________________________________________________________________________
 | 7. PriorityQueue Data Structure.                                                                       |
 |   => PriorityQueue Data Structure Using Singly Linked List.                                            |
 |       -> Assignment- 17                                                                                |
+|                                                                                                        |
+|                               <---- Recursion Challenges ---->                                         |
+|                                                                                                        |
 | 8. Tree Data Strucute.                                                                                 |
-|   => Introduction to Tree Data Structure.
+|   => Introduction to Tree Data Structure.                                                              |
+|   => Binary Tree Data Structure Using Linked Representation Of Doubly Linked List. - incomplete        |
+|   =>
 |                                                                                                        |
 |                                                                                                        |
 **********************************************************************************************************

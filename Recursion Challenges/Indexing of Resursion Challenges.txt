@@ -1,0 +1,58 @@
+__________________________________________________________________________________________________________
+|                        ****** Indexing of Recursion Challenges. ******                                 |
+|--------------------------------------------------------------------------------------------------------|
+|                                                                                                        |
+|             *---------------* 1. Introduction to Recursion Challenges. *---------------*               |
+|                                                                                                        |
+|--------------------------------------------------------------------------------------------------------|
+|   1. Introduction to Recursion.                                                                        |
+|       -> It is When a function calls it self to make the problem smaller that is called Recursion.     |
+|                                                                                                        |
+|   2. Print first N Natural number using Recursive function.                                            |
+|   2. Print first N Natural number in Reverse Order using Recursive function.                           |
+|   3. Print first N Even Natural number using Recursive function.                                       |
+|   4. Print first N Even Natural number in Reverse Order using Recursive function.                      |
+|   5. Print first N Odd Natural number using Recursive function.                                        |
+|   6. Print first N Odd Natural number in Reverse Order using Recursive function.                       |
+|   7. Print Square of first N Natural number using Recursive function.                                  |
+|   8. Print Square of first N Natural number in Reverse Order Using Recursive function.                 |
+|   9. Print Cube of first N Natural number using Recursive function.                                    |
+|   10. Print Cube of first N Natural number in Reverse Order Using Recursive function.                  |
+|   11. Calculate Sum of first N Natural number using Recursive function.                                |
+|   12. Calculate Sum of first N Even Natural number using Recursive function.                           |
+|   13. Calculate Sum of first N Odd Natural number using Recursive function.                            |
+|   14. Calculate Sum of Square of first N Natural number using Recursive function.                      |
+|   15. Calculate Sum of Square of first N Even Natural number using Recursive function.                 |
+|   15. Calculate Sum of Square of first N Odd Natural number using Recursive function.                  |
+|   16. Calculate factorial of N number using Recursive function.                                        |
+|   17. Calculate sum of the digits of a given number using Recursive function.                          |
+|   18. Print binary of a given decimal number using Recursive function.                                 |
+|   19. Print Nth term of the Fibonacci series using Recursive function.                                 |
+|   20. Print Fibonacci series till the Nth Term using Recursive function.  incomplete                   |
+|
+|                                                                                                        |
+|                                                                                                        |
+|                                                                                                        |
+**********************************************************************************************************
+
+1. Print_First_N_Natural_Number_Using_Recursive_Function.cpp
+2. Print_First_N_Natural_Number_In_Reverse_ORder_Using_Recursive_Function.cpp
+3. Print_First_N_Even_Natural_Number_Using_Recursive_Function.cpp
+4. Print_First_N_Even_Natural_Number_In_Reverse_Order_Using_Recursive_Function.cpp
+5. Print_First_N_Odd_Natural_Number_Using_Recursive_Function.cpp
+6. Print_First_N_Odd_Natural_Number_In_Reverse_Order_Using_Recursive_Function.cpp
+7. Print_Square_Of_First_N_Natural_Number_Using_Recursive_Function.cpp
+8. Print_Square_Of_First_N_Natural_Number_In_Reverse_Order_Using_Recursive_Function.cpp
+9. Print_Cube_Of_First_N_Natural_Number_Using_Recursive_Function.cpp
+10. Print_Cube_Of_First_N_Natural_Number_In_Reverse_Order_Using_Recursive_Function.cpp
+11. Calculate_Sum_Of_First_N_Natural_Number_Using_Recursive_Function.cpp
+12. Calculate_Sum_Of_First_N_Even_Natural_Number_Using_Recursive_Function.cpp
+13. Calculate_Sum_Of_First_N_Odd_Natural_Number_Using_Recursive_Function.cpp
+14. Calculate_Sum_Of_Square_Of_First_N_Natural_Number_Using_Recursive_Function.cpp
+15. Calculate_Sum_Of_Square_Of_First_N_Even_Natural_Number_Using_Recursive_Function.cpp
+15. Calculate_Sum_Of_Square_Of_First_N_Odd_Natural_Number_Using_Recursive_Function.cpp
+16. Calculate_Factorial_Of_N_Number_Using_Recursive_Function.cpp
+17. Calculate_Sum_Of_The_Digits_Of_A_Given_Number_Using_Recursive_Function.cpp
+18. Print_Binary_Of_A_Given_Decimal_Number_Using_RecursiveFunction.cpp
+19. Print__Nth_Term_Of_The_Fibonacci_Series_Using_Recursive_Function.cpp
+20. Print_Fibonacci_Series_Till_The_Nth_Term_Using_Recursive_Function.cpp -
