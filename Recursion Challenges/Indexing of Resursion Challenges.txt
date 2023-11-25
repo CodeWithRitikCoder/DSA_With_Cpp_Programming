@@ -29,6 +29,7 @@ ________________________________________________________________________________
 |   18. Print binary of a given decimal number using Recursive function.                                 |
 |   19. Print Nth term of the Fibonacci series using Recursive function.                                 |
 |   20. Print Fibonacci series till the Nth Term using Recursive function.  incomplete                   |
+|   21. Calculate N raised to power of P using Recursive function.                                       |
 |
 |                                                                                                        |
 |                                                                                                        |
@@ -56,3 +57,4 @@ ________________________________________________________________________________
 18. Print_Binary_Of_A_Given_Decimal_Number_Using_RecursiveFunction.cpp
 19. Print__Nth_Term_Of_The_Fibonacci_Series_Using_Recursive_Function.cpp
 20. Print_Fibonacci_Series_Till_The_Nth_Term_Using_Recursive_Function.cpp -
+21. Calculate_N_Raised_To_Power_Of_P_Using_Recursive_Function.cpp
