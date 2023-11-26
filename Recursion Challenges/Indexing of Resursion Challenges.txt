@@ -5,10 +5,10 @@ ________________________________________________________________________________
 |             *---------------* 1. Introduction to Recursion Challenges. *---------------*               |
 |                                                                                                        |
 |--------------------------------------------------------------------------------------------------------|
-|   1. Introduction to Recursion.                                                                        |
+|   0. Introduction to Recursion.                                                                        |
 |       -> It is When a function calls it self to make the problem smaller that is called Recursion.     |
 |                                                                                                        |
-|   2. Print first N Natural number using Recursive function.                                            |
+|   1. Print first N Natural number using Recursive function.                                            |
 |   2. Print first N Natural number in Reverse Order using Recursive function.                           |
 |   3. Print first N Even Natural number using Recursive function.                                       |
 |   4. Print first N Even Natural number in Reverse Order using Recursive function.                      |
