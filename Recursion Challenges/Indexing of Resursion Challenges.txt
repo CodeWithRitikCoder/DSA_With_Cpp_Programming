@@ -30,7 +30,11 @@ ________________________________________________________________________________
 |   19. Print Nth term of the Fibonacci series using Recursive function.                                 |
 |   20. Print Fibonacci series till the Nth Term using Recursive function.  incomplete                   |
 |   21. Calculate N raised to power of P using Recursive function.                                       |
-|
+|   22. Calculate HCF of two numbers using Recursive function. incomplete                                |
+|   23. Check if an Array is Sorted or not using Recursive function.                                     |
+|   24. Find the first and last occurence of a given number in an given Array using Recursive function.  |
+|   25. Print Reverse String a given string using Recursive function.                                    |
+|   26. Replace pi with 3point14 in string using Recursive function.                                     |
 |                                                                                                        |
 |                                                                                                        |
 |                                                                                                        |
@@ -58,3 +62,8 @@ ________________________________________________________________________________
 19. Print__Nth_Term_Of_The_Fibonacci_Series_Using_Recursive_Function.cpp
 20. Print_Fibonacci_Series_Till_The_Nth_Term_Using_Recursive_Function.cpp -
 21. Calculate_N_Raised_To_Power_Of_P_Using_Recursive_Function.cpp
+22. Calculate_HCF_Of_Two_Numbers_Using_Recursive_Function.cpp -
+23. Check_If_An_Array_Is_Sorted_Or_Not_Using_Recursive_Function.cpp
+24. Find_The_First_And_Last_Occurence_Of_A_Given_Number_In_An_Given_Array_Using_Recursive_Function.cpp
+25. Print_Reverse_String_A_Given_String_Using_Recursive_Function.cpp
+26. Replace_pi_with_3point14_In_String_Using_Recursive_Function.cpp

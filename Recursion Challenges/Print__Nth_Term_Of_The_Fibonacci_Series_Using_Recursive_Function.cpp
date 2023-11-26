@@ -1,7 +1,6 @@
 //Write a program to Print Nth term Fibonacci series using Recursive function. with Ritik.
 #include"iostream"
 #include"conio.h"
-#include"string.h"
 using namespace std;
 
 //Recusive Funtion to Print Nth term Fibonacci series.

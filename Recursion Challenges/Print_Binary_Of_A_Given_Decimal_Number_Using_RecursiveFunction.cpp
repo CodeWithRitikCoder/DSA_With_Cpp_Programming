@@ -1,7 +1,6 @@
 //Write a program to Print binary of a given decimal number using Recursive function. with Ritik.
 #include"iostream"
 #include"conio.h"
-#include"string.h"
 using namespace std;
 
 int x;
