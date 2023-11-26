@@ -35,6 +35,10 @@ ________________________________________________________________________________
 |   24. Find the first and last occurence of a given number in an given Array using Recursive function.  |
 |   25. Print Reverse String a given string using Recursive function.                                    |
 |   26. Replace pi with 3point14 in string using Recursive function.                                     |
+|   27. Tower of Hanoi Moves of given blacks using Recursion function.                                   |
+|   28. Remove all the duplicates from the given String using Recursive function.                        |
+|   29. Move all x to the end of the string using Recursive function.                                    |
+|   30. Generate all subStrings of a given String using Recursive function.                              |
 |                                                                                                        |
 |                                                                                                        |
 |                                                                                                        |
@@ -67,3 +71,7 @@ ________________________________________________________________________________
 24. Find_The_First_And_Last_Occurence_Of_A_Given_Number_In_An_Given_Array_Using_Recursive_Function.cpp
 25. Print_Reverse_String_A_Given_String_Using_Recursive_Function.cpp
 26. Replace_pi_with_3point14_In_String_Using_Recursive_Function.cpp
+27. Tower_Of_Hanoi_Moves_Of_Given_Blacks_Using_Recursion_Function.cpp
+28. Remove_All_The_Duplicates_From_The_Given_String_Using_Recursive_Function.cpp
+29. Move_All_X_To_The_End_Of_The_String_Using_Recursive_Function.cpp
+30. Generate_All_SubStrings_Of_A_Given_String_Using_Recursive_Function.cpp
