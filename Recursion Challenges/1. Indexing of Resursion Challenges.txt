@@ -28,7 +28,7 @@ ________________________________________________________________________________
 |   17. Calculate sum of the digits of a given number using Recursive function.                          |
 |   18. Print binary of a given decimal number using Recursive function.                                 |
 |   19. Print Nth term of the Fibonacci series using Recursive function.                                 |
-|   20. Print Fibonacci series till the Nth Term using Recursive function.  incomplete                   |
+|   20. Print Fibonacci series till the Nth Term using Recursive function.                               |
 |   21. Calculate N raised to power of P using Recursive function.                                       |
 |   22. Calculate HCF of two numbers using Recursive function. incomplete                                |
 |   23. Check if an Array is Sorted or not using Recursive function.                                     |

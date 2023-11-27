@@ -17,7 +17,7 @@ struct node{
     }
 };
 
-//My Doubly linked List class is here.
+//My Binary Tree Using Linked Representation Of Doubly linked List class is here.
 class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList{
     private:
     node* root;
@@ -25,33 +25,76 @@ class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList{
     public:
     //All functions declarations are here.
     BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList(); // This is the default donstructor of this class.
-    void insertElement(int);
+    void insertElement(node *&, int);
+    void pre_OrderTraversal(node *);
+    void post_OrderTraversal(node *);
+    void in_OrderTraversal(node *);
+    void deleteElement(node *&, int);
     void display(); //This function is used to display the whole data of BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList.
     ~BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList(); //This is the destructor of this class.
 };
 
 //Definition of all the function is here.
 
-//Definiton of default constructor of class DoublyLinkedList.
+//Definiton of default constructor of class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList.
 BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList(){
     root= NULL;
 }
 
-//Definition of insertAtStart function of class DoublyLinkedList.
-void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::insertElement(int value){
-    node *n= new node(10);
+//Definition of insertAtStart function of class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList.
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::insertElement(node *&root, int value){
+    node *n= new node(20);
+    root=n;
+    root->left= new node(10);
+    root->right= new node(30);
+    root->left->left= new node(9);
+    root->left->right= new node(12);
+    root->right->left= new node(28);
+    root->right->right= new node(35);
     
 }
 
-//Definition of display function of class DoublyLinkedList.
-void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::display(){
-    node *temp= root;
-    cout<<"              ("<<temp->data<<") "<<endl;
-    cout<<"              /    \\"<<endl;
-    cout<<"           ("<<temp->left->data<<")      ("<<temp->right->data<<")"<<endl;
+//Definition of pre_OrderTraversal function of Class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::pre_OrderTraversal(node *root){
+    if(root == NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    pre_OrderTraversal(root->left);
+    pre_OrderTraversal(root->right);
 }
 
-//Definiton of Distructor of class DoublyLinkedList.
+//Definition of post_OrderTraversal function of Class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::post_OrderTraversal(node *root){
+    if(root == NULL){
+        return;
+    }
+    post_OrderTraversal(root->left);
+    post_OrderTraversal(root->right);
+    cout<<root->data<<" ";
+}
+
+//Definition of in_OrderTraversal function of Class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::in_OrderTraversal(node *root){
+    if(root == NULL){
+        return;
+    }
+    in_OrderTraversal(root->left);
+    cout<<root->data<<" ";
+    in_OrderTraversal(root->right);
+}
+
+//Definition of deleteElement function of Class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement(node *&root, int value){
+
+}
+
+
+//Definition of display function of class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList.
+void BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::display(){
+}
+
+//Definiton of Distructor of class BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList.
 BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList::~BinaryTreeUsingLinkedRepresentationOfDoublyLinkedList(){
     
 }
@@ -187,16 +230,15 @@ int main(){
         }
     }*/
 
-    node *root= new node(10);
-    root->left= new node(20);
-    root->right= new node(30);
-    //bTULRODLL.display();
-    node *temp= root;
-    cout<<"              ("<<temp->data<<") "<<endl;
-    cout<<"             /    \\"<<endl;
-    cout<<"         ("<<temp->left->data<<")      ("<<temp->right->data<<")"<<endl<<endl;
+    node* root;
+    bTULRODLL.insertElement(root, 0);
 
-
+    bTULRODLL.pre_OrderTraversal(root);
+    cout<<endl;
+    bTULRODLL.post_OrderTraversal(root);
+    cout<<endl;
+    bTULRODLL.in_OrderTraversal(root);
+    cout<<endl;
     
     //getch();
     return(0);

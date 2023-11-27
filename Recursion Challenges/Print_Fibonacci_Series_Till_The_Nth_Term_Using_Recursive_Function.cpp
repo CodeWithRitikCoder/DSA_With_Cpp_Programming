@@ -4,12 +4,12 @@
 using namespace std;
 
 //Recusive Funtion to Print Fibonacci series till the Nth Term.
-void recursiveFunction(int n){
-    if(n == 0 || n== 1){
-        return;
-    }
-    int temp= (n-1)+ (n- 2);
-    recursiveFunction(n- 1);
+int recursiveFunction(int n){
+    if(n == 0 || n == 1){ 
+        return n; 
+    }else{ 
+        return recursiveFunction(n-2) + recursiveFunction(n-1); 
+    } 
 }
 
 int main(){
@@ -18,9 +18,9 @@ int main(){
     int n;
     cout<<"Enter a number here : ";
     cin>>n;
-
-    recursiveFunction(n);
-    //incomplete
+      for(int i = 0; i< n; i++) { 
+        cout << recursiveFunction(i)<< " "; 
+    }
     
     //getch();
     return(0);
