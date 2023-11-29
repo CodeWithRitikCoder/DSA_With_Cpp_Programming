@@ -69,7 +69,7 @@ ________________________________________________________________________________
 |           -> Assignment- 19                                                                            |
 |                                                                                                        |
 |   8-ii. AVL Tree Data Structure. incomplete                                                            |
-|       => Introduction to AVL Tree                                                                      |
+|       => Introduction to AVL Tree Data Structure.                                                      |
 |           -> Assignment- 20                                                                            |
 |                                                                                                        |
 |                                                                                                        |
