@@ -55,12 +55,22 @@ ________________________________________________________________________________
 |   => PriorityQueue Data Structure Using Singly Linked List.                                            |
 |       -> Assignment- 17                                                                                |
 |                                                                                                        |
-|                               <---- Recursion Challenges ---->                                         |
+|                            <---- Recursion Challenges ---->                                            |
+|          (All the Programs of Recursion is in the Recursion Challenges directory.)                     |
 |                                                                                                        |
 | 8. Tree Data Strucute.                                                                                 |
 |   => Introduction to Tree Data Structure.                                                              |
-|   => Binary Tree Data Structure Using Linked Representation Of Doubly Linked List. - incomplete        |
-|   =>
+|   => Binary Tree Data Structure Using Linked Representation Of Doubly Linked List.                     |
+|       -> Assignment- 18                                                                                |
+|                                                                                                        |
+|   8-i. Binary Search Tree(BST) Data Structure.                                                         |
+|       => Introduction to Binary Search Tree Data Structure.                                            |
+|       => Binary Search Tree Data Structure Using Linked Representation Of Doubly Linked List.          |
+|           -> Assignment- 19                                                                            |
+|                                                                                                        |
+|   8-ii. AVL Tree Data Structure. incomplete                                                            |
+|       => Introduction to AVL Tree                                                                      |
+|           -> Assignment- 20                                                                            |
 |                                                                                                        |
 |                                                                                                        |
 **********************************************************************************************************

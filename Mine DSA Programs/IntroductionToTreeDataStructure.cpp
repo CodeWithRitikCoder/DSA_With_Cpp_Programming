@@ -142,6 +142,7 @@ Notes:-
 
         4=> Degenerate tree.
             -> Every parents node has exactly one child
+            -> And it has also Skewed Tree.
 
                 1-i.g->        (7)
                               /
@@ -227,6 +228,32 @@ Notes:-
 
         1-> Array Representation of binary tree. - (Not Recomanded).
         2-> Linked Representation Using Doubly Linked List. - (Recomanded).
+
+    => Traversal in Binary Tree.
+        -> There are three types of traversal in Binary Tree.
+
+            1-> Pre-Order Traversal. ---> (Root -> Left -> Right)
+            2-> Post-Order Traversal. ---> (Left -> Right -> Root)
+            3-> In-Order Traversal. ---> (Left -> Root -> Right)
+
+            -> Let's Suppose We have this tree.
+                i.g->      (9)
+                            /  \
+                         (7)    (11)
+                        /  \    /  \
+                      (1) (8)  (10) (12)
+                
+                The find out the Traversal of this Tree.
+
+                    -> Pre-Order Traversal of this Tree is :- 9, 7, 1, 8, 11, 10, 12
+                    -> Post-Order Traversal of this Tree is :- 1, 8, 7, 10, 12, 11, 9
+                    -> In-Order Traversal of this Tree is :- 1, 7, 8, 9, 10, 11, 12
+
+            => Trick to find Pre-Order, Post-Order and In-Order Traversal of Binary Tree.
+                1. In Pre-Order Traversal (<--)
+                2. In Post-Order Traversal (-->)
+                3. In In-Order Traversal (down-Arrow)
+                => After draw the line start cutting these lines. and also printing your Traversal number as well.
 
 */
 
