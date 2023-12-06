@@ -17,6 +17,9 @@ struct node{
     }
 };
 
+//Global variable.
+bool notFind;
+
 //My Binary Search Search Tree Using Linked Representation Of Doubly linked List class is here.
 class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList{
     private:
@@ -144,8 +147,14 @@ node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement
         return NULL;
     }
     if(root->left == NULL && root->right == NULL){
-        delete root;
-        return NULL;
+        if(root->data == key){
+            delete root;
+            cout<<key<<" : is deleted successfully from the Binary Search Tree."<<endl;
+            return NULL;
+        }else{
+            cout<<key<<" : is not present in the Binary Search Tree."<<endl;
+            return root;
+        }
     }
     //Search for the node to be deleted.
     if(key < root->data){
@@ -314,44 +323,57 @@ int main(){
                 break;
             }
             case 2: {
-                cout<<"Enter element to Search in Binary Searhc Tree : ";
-                cin>>element;
-                system("cls");
-                if(bSTULRODLL.searchingIteratively(element)){
-                    cout<<element<<" is present in the Binary Search Tree."<<endl;
+                if(bSTULRODLL.isEmptyBinarySearchTree()){
+                    system("cls");
+                    cout<<"Can't Search because of Empty Binary Search Tree."<<endl;
                 }else{
-                    cout<<element<<" is not present in the Binary Search Tree."<<endl;
+                    cout<<"Enter element to Search in Binary Searhc Tree : ";
+                    cin>>element;
+                    system("cls");
+                    if(bSTULRODLL.searchingIteratively(element)){
+                        cout<<element<<" is present in the Binary Search Tree."<<endl;
+                    }else{
+                        cout<<element<<" is not present in the Binary Search Tree."<<endl;
+                    }
                 }
                 cout<<endl;
                 break;
             }
             case 3: {
-                cout<<"Enter element to Delete from Binary Search Tree : ";
-                cin>>element;
-                bSTULRODLL.deleteElement(element);
-                system("cls");
-                cout<<element<<" : has been deleted successfully from the Binary Search Tree."<<endl;
+                if(bSTULRODLL.isEmptyBinarySearchTree()){
+                    system("cls");
+                    cout<<"Can't Delete because of Empty Binary Search Tree."<<endl;
+                }else{
+                    cout<<"Enter element to Delete from Binary Search Tree : ";
+                    cin>>element;
+                    system("cls");
+                    bSTULRODLL.deleteElement(element);
+                }
                 cout<<endl;
                 break;
             }
             case 4: {
-                system("cls");
+                if(bSTULRODLL.isEmptyBinarySearchTree()){
+                    system("cls");
+                    cout<<"Can't Display because of Empty Binary Search Tree."<<endl;
+                }else{
+                    system("cls");
+                    cout<<"_______________________________________________________________________"<<endl;
+                    cout<<"|\t                                                              |"<<endl;
+                    cout<<"|\t  **** Displaying Binary Searhc Tree Traversal. ****          |"<<endl;
+                    cout<<"|---------------------------------------------------------------------|"<<endl;
+                    cout<<"|\t                                                              |"<<endl;
+                    cout<<"|\t1-> Display Pre-Order Traversal of Binary Search Tree.        |"<<endl;
+                    cout<<"|\t2-> Display Post-Order Traversal of Binary Search Tree.       |"<<endl;
+                    cout<<"|\t3-> Display In-Order Traversal of Binary Search Tree.         |"<<endl;
+                    cout<<"|\t                                                              |"<<endl;
+                    cout<<"***********************************************************************"<<endl<<endl;
+                    cout<<"Enter your choice to Display Traversal : ";
+                    cin>>choice;
 
-                cout<<"_______________________________________________________________________"<<endl;
-                cout<<"|\t                                                              |"<<endl;
-                cout<<"|\t  **** Displaying Binary Searhc Tree Traversal. ****          |"<<endl;
-                cout<<"|---------------------------------------------------------------------|"<<endl;
-                cout<<"|\t                                                              |"<<endl;
-                cout<<"|\t1-> Display Pre-Order Traversal of Binary Search Tree.        |"<<endl;
-                cout<<"|\t2-> Display Post-Order Traversal of Binary Search Tree.       |"<<endl;
-                cout<<"|\t3-> Display In-Order Traversal of Binary Search Tree.         |"<<endl;
-                cout<<"|\t                                                              |"<<endl;
-                cout<<"***********************************************************************"<<endl<<endl;
-                cout<<"Enter your choice to Display Traversal : ";
-                cin>>choice;
-
-                system("cls");
-                bSTULRODLL.display(choice);
+                    system("cls");
+                    bSTULRODLL.display(choice);
+                }
                 cout<<endl;
                 break;
             }
@@ -371,7 +393,7 @@ int main(){
             }
             default :{
                 system("cls");
-                cout<<endl<<"Invalid choice! Please choice a valid option."<<endl<<endl;
+                cout<<"Invalid choice! Please choice a valid option."<<endl<<endl;
                 break;
             }
         }
