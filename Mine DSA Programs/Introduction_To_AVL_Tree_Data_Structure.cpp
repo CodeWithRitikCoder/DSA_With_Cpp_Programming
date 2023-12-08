@@ -32,8 +32,9 @@ Notes:-
 
 int main(){
     cout<<"Introduction to AVL Tree Data Structure. in C++ programming\n"<<endl;
+    int a= 0;
     
-    cout<<"My name is Ritk veram.";
+    
     
     //getch();
     return(0);

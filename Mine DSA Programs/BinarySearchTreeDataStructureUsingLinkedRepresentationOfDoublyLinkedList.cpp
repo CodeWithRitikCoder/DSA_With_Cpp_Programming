@@ -18,7 +18,7 @@ struct node{
 };
 
 //Global variable.
-bool notFind;
+int deletedKey;
 
 //My Binary Search Search Tree Using Linked Representation Of Doubly linked List class is here.
 class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList{
@@ -33,7 +33,7 @@ class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList{
     node* searchingRecursively(node*, int);
     node* searchingIteratively(node*, int);
     node* inOrderPredecessor(node*);
-    node* deleteElement(node *, int);
+    node* deleteElement(node *, int, bool);
 
 
     public:
@@ -141,15 +141,18 @@ node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::inOrderPredec
 }
 
 //Definiton of deleteElement protected function of class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList.
-node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement(node *root, int key){
+node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement(node *root, int key, bool toDeleteKey){
     node *iPre;
+    if(toDeleteKey){
+        deletedKey= key;
+    }
     if(root == NULL){
         return NULL;
     }
     if(root->left == NULL && root->right == NULL){
         if(root->data == key){
             delete root;
-            cout<<key<<" : is deleted successfully from the Binary Search Tree."<<endl;
+            cout<<deletedKey<<" : is deleted successfully from the Binary Search Tree."<<endl;
             return NULL;
         }else{
             cout<<key<<" : is not present in the Binary Search Tree."<<endl;
@@ -158,13 +161,13 @@ node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement
     }
     //Search for the node to be deleted.
     if(key < root->data){
-        root->left= deleteElement(root->left, key);
+        root->left= deleteElement(root->left, key, false);
     }else if(key > root->data){
-        root->right= deleteElement(root->right, key);
+        root->right= deleteElement(root->right, key, false);
     }else{
         iPre= inOrderPredecessor(root);
         root->data= iPre->data;
-        root->left= deleteElement(root->left, iPre->data);
+        root->left= deleteElement(root->left, iPre->data, false);
     }
     return root;
 }
@@ -249,7 +252,7 @@ node* BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::searchingIter
 
 //Definition of deleteElement function of Class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList.
 void BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList::deleteElement(int key){
-    root= deleteElement(root, key);
+    root= deleteElement(root, key, true);
 }
 
 //Definition of display function of Class BinarySearchTreeUsingLinkedRepresentationOfDoublyLinkedList.

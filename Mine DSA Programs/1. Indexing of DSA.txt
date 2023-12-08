@@ -20,7 +20,7 @@ ________________________________________________________________________________
 |       -> Assignment- 4                                                                                 |
 |   => Doubly Linked List DSA. - incomplete delete specify node                                          |
 |       -> Assingment- 5.                                                                                |
-|   => Circular DOubly Linked List DSA. - incomplete reverse only.                                       |
+|   => Circular Doubly Linked List DSA. - incomplete reverse only.                                       |
 |                                                                                                        |
 | 4. Stack Data Structure.                                                                               |
 |   => Stack Data Structure using Array.                                                                 |
