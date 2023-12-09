@@ -91,6 +91,7 @@ bool DynamicArray::isFull(){
     return (capacity== lastIndex+ 1);
 }
 
+//Definiton of append function.
 void DynamicArray::append(int data){
     if(isFull()){
         doubleArray();
@@ -144,10 +145,6 @@ void DynamicArray::del(int index){
         }
     }
 }
-
-// lastIndex--;
-// 			if(Capacity>1 && lastIndex+1<=Capacity)
-// 			halfArray();
 
 //Definition of getItem function.
 void DynamicArray::getItem(int index){
@@ -236,8 +233,9 @@ void DynamicArray::halfArray(){
     capacity/= 2;
 }
 
+//Here it is my main() function.
 int main(){
-    cout<<"Dynamic Array Data Structure in C++ programming\n"<<endl;
+    cout<<"Dynamic Array Data Structure in C++ programming.\n"<<endl;
     
     DynamicArray dA1(3);
 
@@ -256,20 +254,20 @@ int main(){
     dA1.del(1);
     dA1.showData();
     cout<<"The capacity of array is : "<<dA1.getCapacity()<<endl;
-    // dA1.getLastIndex();
+    dA1.getLastIndex();
 
-    // cout<<"Is array full or not : "<<dA1.isFull()<<endl;
-    // cout<<"Is array empty or not : "<<dA1.isEmpty()<<endl;
+    cout<<"Is array full or not : "<<dA1.isFull()<<endl;
+    cout<<"Is array empty or not : "<<dA1.isEmpty()<<endl;
 
-    // cout<<endl;
-    // dA1.insert(1, 10);
-    // dA1.showData();
+    cout<<endl;
+    dA1.insert(1, 10);
+    dA1.showData();
 
-    // cout<<"The capacity of array is : "<<dA1.getCapacity()<<endl;
-    // dA1.getLastIndex();
+    cout<<"The capacity of array is : "<<dA1.getCapacity()<<endl;
+    dA1.getLastIndex();
 
-    // cout<<"Total item in the array till the now is : "<<dA1.countItem()<<endl;
-    // dA1.getLastIndex();
+    cout<<"Total item in the array till the now is : "<<dA1.countItem()<<endl;
+    dA1.getLastIndex();
 
     // cout<<endl;
     // dA1.getItem(1);

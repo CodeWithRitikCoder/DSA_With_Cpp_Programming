@@ -85,7 +85,7 @@ void Array::edit(int index, int data){
     }
 }
 
-// Function for remove/delet elements from the array.
+// Function for remove/delete elements from the array.
 void Array::remove(int index){
     if(index< 0 || index> lastIndex+ 1){
         cout<<"Invalid index."<<endl;
@@ -104,7 +104,6 @@ void Array::remove(int index){
 void Array::removeAll(){
     delete[] ptr;
     lastIndex= -1;
-    // Array a1(capacity);
 }
 
 // Function for getItem from the particular index from the array.
@@ -140,17 +139,15 @@ void Array::find(int data){
 
 // Function for printing the whole filled array.
 void Array::printArray(){
-    //cout<<"[";
     for(int i= 0; i<= lastIndex; i++){
         cout<<ptr[i]<<" ";
     }
-    //cout<<"]";
     cout<<endl;
 }
 
 
 int main(){
-    cout<<"Simple sinppit for C++ programming\n";
+    cout<<"Static Array Data Structure in C++ programming.\n";
 
     Array a1(6);
     a1.count();
