@@ -13,6 +13,8 @@ ________________________________________________________________________________
 |   => Dynamic Array DSA.                                                                                |
 |       -> Assingment- 2.                                                                                |
 |                                                                                                        |
+|   <----------- (Linear Vs Binary Search) ----------->                                                  |
+|                                                                                                        |
 | 3. Linked List Data Structure.                                                                         |
 |   => Singly Linked List DSA.                                                                           |
 |       -> Assingment- 3.                                                                                |

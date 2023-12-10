@@ -292,12 +292,12 @@ int main(){
     // dA2.getLastIndex();
     // cout<<"Total item in the array till the now is : "<<dA2.countItem()<<endl; 
 
-    // cout<<endl;
+    // cout<<endl;52
     // dA1.getItem(3);
     // dA1.find(10);
     // dA1.find(44);
 
-    // cout<<endl;
+    // cout<<endl;5
     // dA1.append(11);
     // dA1.append(22);
     // dA1.append(31);
