@@ -50,7 +50,7 @@ int BinarySearchFunction(int arr[], int size, int element){
 }
 
 int main(){
-    printf("Binary Search in Data Structure with C++ programming\n");
+    cout<<"Binary Search in Data Structure with C++ programming\n"<<endl;
     
     //Sorted array of binary search.
     int arr[]= {1, 3, 5, 56, 64, 73, 123, 225, 444, 456, 554};

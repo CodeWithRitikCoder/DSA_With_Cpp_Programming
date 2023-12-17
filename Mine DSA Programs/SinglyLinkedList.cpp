@@ -1,4 +1,4 @@
-//Write a program to implement Linked List Data Structure in C++ programming with Ritik.
+//Code a program to implement Singly Linked List Data Structure in C++ programming with Ritik.
 #include"iostream"
 #include"conio.h"
 using namespace std;
@@ -17,25 +17,25 @@ class SLL{
     SLL(); //This is the default constructor of this class.
     void insertAtStart(int); //This function is used to insert element at the start of the linked list.
     void insertAtLast(int); //This function is used to insert element at the last of the linked list.
-    void insertAtAfter(node *, int); //This function is used to insert elemtn at the specified path into the linked list.
+    void insertAtAfter(node *, int); //This function is used to insert element at the specified path into the linked list.
     node * search(int); //This function is used to search the element from the linked list.
     void deleteAtStart(); //This function is used to delete element from first of the linked list.
     void deleteAtLast(); //This function is used to delete element from last of the linked list.
     void deleteSpecifiedNode(int); //This function is used to delete specified node form the linked list.
     void reverse(); //This funciton is used to reverse element of Linked list.
-    int countNode();
+    int countNode(); //This function is used to count Nodes of linked list.
     void display(); //This function is used to display the whole data of the linked list.
     ~SLL(); //This is the destructor of this class.
 };
 
-//Definition of all the function is here.
+//Definition of all the functions is here.
 
 //Definiton of default constructor of class SLL.
 SLL::SLL(){
     start= NULL;
 }
 
-//Definition of insertAtStart function of lisked list.
+//Definition of insertAtStart function of Singly lisked list.
 void SLL::insertAtStart(int data){
     node *n= new node;
     n->item= data;
@@ -43,7 +43,7 @@ void SLL::insertAtStart(int data){
     start= n;
 }
 
-//Definition of insertAtLast function of Linked list.
+//Definition of insertAtLast function of Singly Linked list.
 void SLL::insertAtLast(int data){
     node *n= new node;
     n->item= data;
@@ -61,7 +61,7 @@ void SLL::insertAtLast(int data){
     }
 }
 
-//Definition of insertAtAfter function of linked list.
+//Definition of insertAtAfter function of Singly linked list.
 void SLL::insertAtAfter(node *temp, int data){
     node *n;
     if(temp != NULL){
@@ -74,7 +74,7 @@ void SLL::insertAtAfter(node *temp, int data){
     }*/
 }
 
-//Definition of search function of linked list.
+//Definition of search function of Singly linked list.
 node * SLL::search(int data){
     node *temp;
     temp= start;
@@ -87,7 +87,7 @@ node * SLL::search(int data){
     return NULL;
 }
 
-//Definition of deleteAtStart function of linked list.
+//Definition of deleteAtStart function of Singly linked list.
 void SLL::deleteAtStart(){
     node *temp;
     if(start){
@@ -97,7 +97,7 @@ void SLL::deleteAtStart(){
     }
 }
 
-//Definition of deleteAtLast function of linked list.
+//Definition of deleteAtLast function of Singly linked list.
 void SLL::deleteAtLast(){
     node *temp;
     if(start){
@@ -115,7 +115,7 @@ void SLL::deleteAtLast(){
     }
 }
 
-//Definition of deleteSepcifiedNode function of linked list.
+//Definition of deleteSepcifiedNode function of Singly linked list.
 void SLL::deleteSpecifiedNode(int data){
     node *temp;
     bool checkElement= true;
@@ -124,8 +124,7 @@ void SLL::deleteSpecifiedNode(int data){
         if (temp->item == data){
             start = start->next;
             delete temp;
-        }
-        else{
+        }else{
             while (temp->next != NULL){
                 if (temp->next->item == data){
                     node *toDelete = temp->next;
@@ -141,7 +140,7 @@ void SLL::deleteSpecifiedNode(int data){
             }
         }
     }else{
-        cout<<"Your linked list is already empty"<<endl;
+        cout<<"Your Singly linked list is already empty"<<endl;
     }
 
     if(checkElement){
@@ -151,7 +150,7 @@ void SLL::deleteSpecifiedNode(int data){
     }
 }
 
-//Definiton of reverse function of linked list.
+//Definiton of reverse function of Singly linked list.
 void SLL::reverse(){
     node *tempNode;
     tempNode= start;
@@ -169,7 +168,7 @@ void SLL::reverse(){
     start= previousPtr;
 }
 
-//Definition of countNode function of linked list.
+//Definition of countNode function of Singly linked list.
 int SLL::countNode(){
     int count= 0;
     node *temp;
@@ -198,9 +197,11 @@ void SLL::display(){
     cout<<"[NULL]"<<endl;
 }
 
-//Definition of destructor of the linked list.
+//Definition of destructor of the Singly linked list.
 SLL::~SLL(){
-    deleteAtStart();
+    while(start){
+        deleteAtStart();
+    }
 }
 
 //Main function code is here.
